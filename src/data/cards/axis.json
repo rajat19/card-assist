@@ -1,0 +1,166 @@
+[
+    {
+        "name": "Axis My Zone Credit Card",
+        "bankName": "Axis Bank",
+        "cardType": "regular",
+        "description": "Lifestyle card with Swiggy/movie offers and surcharge waivers",
+        "benefits": [
+            {
+                "category": "Swiggy",
+                "type": "cashback",
+                "value": 15,
+                "description": "Swiggy discount; caps/partners apply"
+            },
+            {
+                "category": "Entertainment",
+                "type": "cashback",
+                "value": 10,
+                "description": "Movie/entertainment offers (verify exact offer)"
+            },
+            {
+                "category": "Shopping",
+                "type": "cashback",
+                "value": 1.5,
+                "description": "Cashback on other spends"
+            }
+        ],
+        "feesAndCharges": {
+            "annual": {
+                "value": 500,
+                "type": "fixed"
+            },
+            "joining": {
+                "value": 500,
+                "type": "fixed"
+            },
+            "cashWithdrawal": {
+                "value": 2.5,
+                "type": "percentage",
+                "description": "2.5% (Min. ₹500) of the cash amount"
+            },
+            "forex": {
+                "value": 3.5,
+                "type": "percentage"
+            },
+            "fuelTransaction": {
+                "value": 1,
+                "type": "percentage",
+                "description": "1% surcharge waiver for eligible transactions"
+            }
+        },
+        "link": "https://www.axisbank.com/retail/cards/credit-card/my-zone-credit-card",
+        "updatedAt": "2025-09-06",
+        "dataSource": "manual"
+    },
+    {
+        "name": "LIC Axis Bank Signature Credit Card",
+        "bankName": "Axis Bank",
+        "cardType": "cobrand",
+        "description": "Signature-tier co-branded card with lifestyle and shopping rewards",
+        "benefits": [
+            {
+                "category": "Shopping",
+                "type": "reward_points",
+                "value": 2,
+                "description": "Accelerated rewards on select categories"
+            },
+            {
+                "category": "Dining",
+                "type": "reward_points",
+                "value": 2,
+                "description": "Dining privileges"
+            },
+            {
+                "category": "General",
+                "type": "reward_points",
+                "value": 1
+            }
+        ],
+        "feesAndCharges": {
+            "annual": {
+                "value": 499,
+                "type": "fixed"
+            },
+            "joining": {
+                "value": 499,
+                "type": "fixed"
+            },
+            "cashWithdrawal": {
+                "value": 2.5,
+                "type": "percentage",
+                "description": "2.5% (Min. ₹500)"
+            },
+            "forex": {
+                "value": 3.5,
+                "type": "percentage"
+            },
+            "fuelTransaction": {
+                "value": 1,
+                "type": "percentage",
+                "description": "1% surcharge waiver at select stations"
+            }
+        },
+        "link": "https://www.axisbank.com/retail/cards/credit-card/lic-axis-bank-signature-credit-card",
+        "updatedAt": "2025-09-06",
+        "dataSource": "manual"
+    },
+    {
+        "name": "Flipkart Axis Bank Credit Card",
+        "bankName": "Axis Bank",
+        "cardType": "cobrand",
+        "description": "Best for Flipkart shopping and partner merchants",
+        "benefits": [
+            {
+                "category": "Flipkart",
+                "type": "cashback",
+                "value": 5,
+                "description": "5% cashback on Flipkart"
+            },
+            {
+                "category": "Uber",
+                "type": "cashback",
+                "value": 4,
+                "description": "4% cashback on select partners"
+            },
+            {
+                "category": "BookMyShow",
+                "type": "cashback",
+                "value": 4,
+                "description": "4% cashback on entertainment partners"
+            },
+            {
+                "category": "General",
+                "type": "cashback",
+                "value": 1.5,
+                "description": "1.5% cashback on other spends"
+            }
+        ],
+        "feesAndCharges": {
+            "annual": {
+                "value": 500,
+                "type": "fixed"
+            },
+            "joining": {
+                "value": 500,
+                "type": "fixed"
+            },
+            "cashWithdrawal": {
+                "value": 2.5,
+                "type": "percentage",
+                "description": "2.5% (Min. ₹500)"
+            },
+            "forex": {
+                "value": 3.5,
+                "type": "percentage"
+            },
+            "fuelTransaction": {
+                "value": 1,
+                "type": "percentage",
+                "description": "1% surcharge waiver (caps apply)"
+            }
+        },
+        "link": "https://www.axisbank.com/retail/cards/credit-card/flipkart-axisbank-credit-card",
+        "updatedAt": "2025-09-06",
+        "dataSource": "manual"
+    }
+]

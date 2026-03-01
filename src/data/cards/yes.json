@@ -1,0 +1,47 @@
+[
+    {
+        "name": "Uni Card",
+        "bankName": "Yes Bank",
+        "cardType": "cobrand",
+        "description": "Pay-in-parts/pay-later style product; benefits vary by program",
+        "benefits": [
+            {
+                "category": "Shopping",
+                "type": "cashback",
+                "value": 1
+            },
+            {
+                "category": "General",
+                "type": "cashback",
+                "value": 1
+            }
+        ],
+        "feesAndCharges": {
+            "annual": {
+                "value": 0,
+                "type": "fixed"
+            },
+            "joining": {
+                "value": 0,
+                "type": "fixed"
+            },
+            "cashWithdrawal": {
+                "value": 2.5,
+                "type": "percentage",
+                "description": "Standard cash advance fee (confirm)"
+            },
+            "forex": {
+                "value": 0,
+                "type": "percentage"
+            },
+            "fuelTransaction": {
+                "value": 1,
+                "type": "percentage",
+                "description": "1% surcharge waiver (confirm availability)"
+            }
+        },
+        "link": "https://www.uni.cards/",
+        "updatedAt": "2025-09-06",
+        "dataSource": "manual"
+    }
+]

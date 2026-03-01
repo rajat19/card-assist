@@ -69,6 +69,8 @@ export interface CreditCard {
   cardType: CardType;
   link: string;
   lounge?: Lounge;
+  updatedAt?: string;
+  dataSource?: 'manual' | 'scraped';
 }
 
 export const CATEGORIES = [
