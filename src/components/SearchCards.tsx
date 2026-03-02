@@ -68,6 +68,19 @@ const SearchCards = ({ cards }: SearchCardsProps) => {
     }
   };
 
+  const bestType = (benefitType: BenefitType) => {
+    switch (benefitType) {
+      case BenefitType.CASHBACK:
+        return '% Cashback';
+      case BenefitType.REWARD_POINTS:
+        return ' RP';
+      case BenefitType.VOUCHER:
+        return ' Voucher';
+      case BenefitType.FIXED:
+        return ' Cashback';
+    }
+  };
+
   const popularQueries = ['Amazon', 'Flipkart', 'Swiggy', 'Travel', 'Fuel', 'Dining'];
 
   return (
@@ -81,7 +94,7 @@ const SearchCards = ({ cards }: SearchCardsProps) => {
             <CardTitle className="text-xl text-card-foreground">Find Best Credit Card</CardTitle>
           </div>
         </CardHeader>
-        
+
         <CardContent className="space-y-4">
           <div className="flex gap-2">
             <Input
@@ -91,7 +104,7 @@ const SearchCards = ({ cards }: SearchCardsProps) => {
               placeholder="Enter merchant or category (e.g., Amazon, Travel, Dining)"
               className="flex-1"
             />
-            <Button 
+            <Button
               onClick={(e) => {
                 e.preventDefault();
                 void handleSearch();
@@ -102,7 +115,7 @@ const SearchCards = ({ cards }: SearchCardsProps) => {
               Search
             </Button>
           </div>
-          
+
           <div className="space-y-2">
             <p className="text-sm text-muted-foreground">Popular searches:</p>
             <div className="flex flex-wrap gap-2">
@@ -199,7 +212,7 @@ const SearchCards = ({ cards }: SearchCardsProps) => {
                             <TableCell>
                               {best ? (
                                 <span>
-                                  {best.category}: {best.value}%{best.type === BenefitType.REWARD_POINTS ? ' RP' : ''}
+                                  {best.category}: {best.value}{bestType(best.type)}
                                 </span>
                               ) : (
                                 <span className="text-muted-foreground">—</span>

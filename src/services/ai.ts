@@ -23,13 +23,16 @@ export async function aiSuggestCards(query: string, cards: CreditCard[]): Promis
       name: c.name,
       bankName: c.bankName,
       cardType: c.cardType,
+      description: c.description ?? '',
       feesAndCharges: c.feesAndCharges,
       benefits: c.benefits.map((b) => ({
         category: b.category,
         type: b.type,
         value: b.value,
         description: b.description ?? '',
+        conditions: b.conditions ?? '',
       })),
+      ...(c.lounge ? { lounge: c.lounge } : {}),
     }));
 
     const systemPrompt = `You are a credit card rewards expert. Rank the given credit cards for the user's query.
@@ -82,7 +85,7 @@ Return STRICT JSON with keys: results (array of up to 5 objects with keys name a
         );
         const best = relevant.reduce<{ value: number; category?: string; description?: string }>((acc, b) =>
           b.value > acc.value ? { value: b.value, category: b.category, description: b.description } : acc,
-        { value: 0 });
+          { value: 0 });
         const reason = best.value > 0 ? `Up to ${best.value}% on ${best.category ?? 'relevant spends'}` : undefined;
         return { name: card.name, score: best.value, reason };
       })

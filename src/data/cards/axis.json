@@ -502,7 +502,7 @@
       },
       {
         "category": "Travel",
-        "type": "other",
+        "type": "voucher",
         "value": 12500,
         "description": "Welcome benefit: Choose one voucher worth ₹12,500 (Luxe, Postcard Hotels, or Yatra gift voucher)"
       },

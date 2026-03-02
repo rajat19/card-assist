@@ -24,6 +24,8 @@ export enum CardType {
 export enum BenefitType {
   CASHBACK = 'cashback',
   REWARD_POINTS = 'reward_points',
+  VOUCHER = 'voucher',
+  FIXED = 'fixed',
 }
 
 export interface Benefit {

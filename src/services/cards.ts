@@ -9,7 +9,15 @@ const CARDS_COLLECTION = 'cards';
 export type NewCreditCard = CreditCard;
 
 function toBenefitType(value: unknown): BenefitType {
-  return value === BenefitType.REWARD_POINTS ? BenefitType.REWARD_POINTS : BenefitType.CASHBACK;
+  switch (value) {
+    case BenefitType.REWARD_POINTS:
+    case BenefitType.CASHBACK:
+    case BenefitType.VOUCHER:
+    case BenefitType.FIXED:
+      return value as BenefitType;
+    default:
+      return BenefitType.CASHBACK;
+  }
 }
 
 function toCardType(value: unknown): CardType {
@@ -67,12 +75,12 @@ function mapDocToCreditCard(docWrap: { id: string; data: () => DocumentData }): 
   const data = docWrap.data();
   const benefits: Benefit[] = Array.isArray(data.benefits)
     ? data.benefits.map((b: Record<string, unknown>) => ({
-        category: String(b.category ?? ''),
-        type: toBenefitType(b.type),
-        value: Number(b.value ?? 0),
-        description: b.description ? String(b.description) : undefined,
-        conditions: b.conditions ? String(b.conditions) : undefined,
-      }))
+      category: String(b.category ?? ''),
+      type: toBenefitType(b.type),
+      value: Number(b.value ?? 0),
+      description: b.description ? String(b.description) : undefined,
+      conditions: b.conditions ? String(b.conditions) : undefined,
+    }))
     : [];
 
   return {

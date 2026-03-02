@@ -6,17 +6,13 @@ import CreditCardItem from '@/components/CreditCardItem';
 import AddCreditCardForm from '@/components/AddCreditCardForm';
 import CardForm from '@/components/CardForm';
 import heroImage from '@/assets/hero-credit-cards.jpg';
-import { subscribeToCards, addCard, updateCard } from '@/services/cards';
+import { addCard, updateCard } from '@/services/cards';
+import { CREDIT_CARDS } from '@/data/creditCards';
 
 const Index = () => {
   const [activeTab, setActiveTab] = useState<'search' | 'cards' | 'add' | 'edit'>('search');
-  const [cards, setCards] = useState<CreditCard[]>([]);
+  const cards = CREDIT_CARDS;
   const [editingCard, setEditingCard] = useState<CreditCard | null>(null);
-
-  useEffect(() => {
-    const unsubscribe = subscribeToCards((remoteCards) => setCards(remoteCards));
-    return () => unsubscribe();
-  }, []);
 
   // Initialize history state and handle browser back/forward to switch tabs
   useEffect(() => {
@@ -53,15 +49,15 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navigation activeTab={activeTab} onTabChange={(t) => navigateTab(t)} isEditing={!!editingCard} />
-      
+
       <main className="container mx-auto px-4 py-8">
         {/* Hero Section - only show on search tab */}
         {activeTab === 'search' && (
           <div className="mb-8 relative">
             <div className="relative overflow-hidden rounded-2xl bg-gradient-financial">
-              <img 
-                src={heroImage} 
-                alt="Credit Cards" 
+              <img
+                src={heroImage}
+                alt="Credit Cards"
                 className="w-full h-64 object-cover opacity-20"
               />
               <div className="absolute inset-0 flex items-center justify-center">
@@ -82,7 +78,7 @@ const Index = () => {
         {activeTab === 'search' && (
           <SearchCards cards={cards} />
         )}
-        
+
         {activeTab === 'cards' && (
           <div className="space-y-6">
             <div className="flex items-center justify-between">
@@ -91,7 +87,7 @@ const Index = () => {
                 <p className="text-muted-foreground">Browse all {cards.length} available credit cards</p>
               </div>
             </div>
-            
+
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {cards.map((card) => (
                 <div key={card.name}>
@@ -113,7 +109,7 @@ const Index = () => {
             </div>
           </div>
         )}
-        
+
         {activeTab === 'add' && (
           <div className="max-w-4xl mx-auto">
             <CardForm
