@@ -10,6 +10,8 @@ export enum Bank {
   YES_BANK = 'Yes Bank',
   KOTAK_MAHINDRA_BANK = 'Kotak Mahindra Bank',
   BANK_OF_BARODA = 'Bank of Baroda',
+  AU_BANK = 'AU Bank',
+  HSBC_BANK = 'HSBC Bank',
 }
 
 export enum CardType {
@@ -69,6 +71,8 @@ export interface CreditCard {
   cardType: CardType;
   link: string;
   lounge?: Lounge;
+  updatedAt?: string;
+  dataSource?: 'manual' | 'scraped';
 }
 
 export const CATEGORIES = [

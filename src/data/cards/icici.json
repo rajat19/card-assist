@@ -1,0 +1,207 @@
+[
+    {
+        "name": "ICICI Bank Coral Credit Card",
+        "bankName": "ICICI Bank",
+        "cardType": "entry",
+        "description": "RuPay network card with rewards on everyday categories",
+        "benefits": [
+            {
+                "category": "Utilities",
+                "type": "reward_points",
+                "value": 2
+            },
+            {
+                "category": "Shopping",
+                "type": "reward_points",
+                "value": 2
+            },
+            {
+                "category": "General",
+                "type": "reward_points",
+                "value": 1
+            }
+        ],
+        "feesAndCharges": {
+            "annual": {
+                "value": 499,
+                "type": "fixed"
+            },
+            "joining": {
+                "value": 499,
+                "type": "fixed"
+            },
+            "cashWithdrawal": {
+                "value": 2.5,
+                "type": "percentage",
+                "description": "2.5% (Min. ₹300)"
+            },
+            "forex": {
+                "value": 3.5,
+                "type": "percentage"
+            },
+            "fuelTransaction": {
+                "value": 1,
+                "type": "percentage",
+                "description": "1% surcharge waiver (caps apply)"
+            }
+        },
+        "link": "https://www.icicibank.com/personal-banking/cards/credit-card/rupay-credit-card",
+        "updatedAt": "2025-09-06",
+        "dataSource": "manual"
+    },
+    {
+        "name": "Amazon Pay ICICI Credit Card",
+        "bankName": "ICICI Bank",
+        "cardType": "cobrand",
+        "description": "Best for Amazon shopping with Prime/non-Prime benefits",
+        "benefits": [
+            {
+                "category": "Amazon",
+                "type": "cashback",
+                "value": 5,
+                "description": "For Prime members on Amazon"
+            },
+            {
+                "category": "Amazon",
+                "type": "cashback",
+                "value": 3,
+                "description": "For non-Prime members on Amazon"
+            },
+            {
+                "category": "General",
+                "type": "cashback",
+                "value": 1,
+                "description": "All other payments"
+            }
+        ],
+        "feesAndCharges": {
+            "annual": {
+                "value": 0,
+                "type": "fixed",
+                "description": "Lifetime free"
+            },
+            "joining": {
+                "value": 0,
+                "type": "fixed"
+            },
+            "cashWithdrawal": {
+                "value": 2.5,
+                "type": "percentage",
+                "description": "2.5% (Min. ₹300)"
+            },
+            "forex": {
+                "value": 3.5,
+                "type": "percentage"
+            },
+            "fuelTransaction": {
+                "value": 1,
+                "type": "percentage",
+                "description": "1% surcharge waiver (caps apply)"
+            }
+        },
+        "link": "https://www.icicibank.com/personal-banking/cards/credit-card/amazon-pay-credit-card/benefits-features",
+        "updatedAt": "2025-09-06",
+        "dataSource": "manual"
+    },
+    {
+        "name": "ICICI Bank Platinum Chip Credit Card",
+        "bankName": "ICICI Bank",
+        "cardType": "entry",
+        "description": "Entry card with basic rewards and EMV chip security",
+        "benefits": [
+            {
+                "category": "Shopping",
+                "type": "reward_points",
+                "value": 2
+            },
+            {
+                "category": "Dining",
+                "type": "reward_points",
+                "value": 2
+            },
+            {
+                "category": "General",
+                "type": "reward_points",
+                "value": 1
+            }
+        ],
+        "feesAndCharges": {
+            "annual": {
+                "value": 0,
+                "type": "fixed",
+                "description": "Often LTF; verify variant"
+            },
+            "joining": {
+                "value": 0,
+                "type": "fixed"
+            },
+            "cashWithdrawal": {
+                "value": 2.5,
+                "type": "percentage",
+                "description": "2.5% (Min. ₹300)"
+            },
+            "forex": {
+                "value": 3.5,
+                "type": "percentage"
+            },
+            "fuelTransaction": {
+                "value": 1,
+                "type": "percentage",
+                "description": "1% surcharge waiver (caps apply)"
+            }
+        },
+        "link": "https://www.icicibank.com/personal-banking/cards/credit-card/platinum-chip",
+        "updatedAt": "2025-09-06",
+        "dataSource": "manual"
+    },
+    {
+        "name": "ICICI Bank Sapphiro Credit Card",
+        "bankName": "ICICI Bank",
+        "cardType": "regular",
+        "description": "Premium travel and lifestyle card with airport lounge access",
+        "benefits": [
+            {
+                "category": "Travel",
+                "type": "reward_points",
+                "value": 4
+            },
+            {
+                "category": "Dining",
+                "type": "reward_points",
+                "value": 4
+            },
+            {
+                "category": "General",
+                "type": "reward_points",
+                "value": 1
+            }
+        ],
+        "feesAndCharges": {
+            "annual": {
+                "value": 3500,
+                "type": "fixed"
+            },
+            "joining": {
+                "value": 6500,
+                "type": "fixed"
+            },
+            "cashWithdrawal": {
+                "value": 2.5,
+                "type": "percentage",
+                "description": "2.5% (Min. ₹300)"
+            },
+            "forex": {
+                "value": 3.5,
+                "type": "percentage"
+            },
+            "fuelTransaction": {
+                "value": 1,
+                "type": "percentage",
+                "description": "1% surcharge waiver (caps apply)"
+            }
+        },
+        "link": "https://www.icicibank.com/personal-banking/cards/credit-card/sapphiro-credit-card/key-privileges?ITM=nli_cms_CC_choosecard_sapphiro_ccindex_knowmorebtn",
+        "updatedAt": "2025-09-06",
+        "dataSource": "manual"
+    }
+]

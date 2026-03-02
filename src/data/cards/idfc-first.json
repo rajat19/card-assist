@@ -1,0 +1,105 @@
+[
+    {
+        "name": "IDFC FIRST Wealth Credit Card",
+        "bankName": "IDFC First Bank",
+        "cardType": "premium",
+        "description": "Premium LTF card with travel/dining privileges and low fees",
+        "benefits": [
+            {
+                "category": "Dining",
+                "type": "reward_points",
+                "value": 3
+            },
+            {
+                "category": "Travel",
+                "type": "reward_points",
+                "value": 3
+            },
+            {
+                "category": "General",
+                "type": "reward_points",
+                "value": 1
+            }
+        ],
+        "feesAndCharges": {
+            "annual": {
+                "value": 0,
+                "type": "fixed",
+                "description": "Lifetime free"
+            },
+            "joining": {
+                "value": 0,
+                "type": "fixed"
+            },
+            "cashWithdrawal": {
+                "value": 0,
+                "type": "percentage",
+                "description": "No cash advance fee (confirm)"
+            },
+            "forex": {
+                "value": 0,
+                "type": "percentage",
+                "description": "0% forex markup (confirm)"
+            },
+            "fuelTransaction": {
+                "value": 1,
+                "type": "percentage",
+                "description": "1% surcharge waiver (caps apply)"
+            }
+        },
+        "link": "https://www.idfcfirstbank.com/credit-card/wealth",
+        "updatedAt": "2025-09-06",
+        "dataSource": "manual"
+    },
+    {
+        "name": "IDFC FIRST WOW Credit Card",
+        "bankName": "IDFC First Bank",
+        "cardType": "entry",
+        "description": "Secured entry card; rewards on everyday categories",
+        "benefits": [
+            {
+                "category": "Shopping",
+                "type": "reward_points",
+                "value": 2
+            },
+            {
+                "category": "Utilities",
+                "type": "reward_points",
+                "value": 2
+            },
+            {
+                "category": "General",
+                "type": "reward_points",
+                "value": 1
+            }
+        ],
+        "feesAndCharges": {
+            "annual": {
+                "value": 0,
+                "type": "fixed",
+                "description": "Lifetime free (secured card)"
+            },
+            "joining": {
+                "value": 0,
+                "type": "fixed"
+            },
+            "cashWithdrawal": {
+                "value": 200,
+                "type": "fixed",
+                "description": "Fixed rate of 200 + GST"
+            },
+            "forex": {
+                "value": 0,
+                "type": "percentage"
+            },
+            "fuelTransaction": {
+                "value": 1,
+                "type": "percentage",
+                "description": "1% surcharge waiver (caps apply)"
+            }
+        },
+        "link": "https://www.idfcfirstbank.com/credit-card/wow",
+        "updatedAt": "2025-09-06",
+        "dataSource": "manual"
+    }
+]

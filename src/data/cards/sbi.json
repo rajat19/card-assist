@@ -1,0 +1,54 @@
+[
+    {
+        "name": "SBI SimplyCLICK Credit Card",
+        "bankName": "SBI Bank",
+        "cardType": "entry",
+        "description": "Ideal for online shopping with accelerated reward points",
+        "benefits": [
+            {
+                "category": "Online Shopping",
+                "type": "reward_points",
+                "value": 10,
+                "description": "Accelerated RP on partner spends"
+            },
+            {
+                "category": "Entertainment",
+                "type": "reward_points",
+                "value": 10,
+                "description": "Bonus RP on select categories"
+            },
+            {
+                "category": "General",
+                "type": "reward_points",
+                "value": 1
+            }
+        ],
+        "feesAndCharges": {
+            "annual": {
+                "value": 499,
+                "type": "fixed"
+            },
+            "joining": {
+                "value": 499,
+                "type": "fixed"
+            },
+            "cashWithdrawal": {
+                "value": 2.5,
+                "type": "percentage",
+                "description": "2.5% (Min. ₹500)"
+            },
+            "forex": {
+                "value": 3.5,
+                "type": "percentage"
+            },
+            "fuelTransaction": {
+                "value": 1,
+                "type": "percentage",
+                "description": "1% surcharge waiver (caps apply)"
+            }
+        },
+        "link": "https://www.sbicard.com/en/personal/credit-cards/shopping/simplyclick-sbi-card.page",
+        "updatedAt": "2025-09-06",
+        "dataSource": "manual"
+    }
+]

@@ -1,0 +1,781 @@
+[
+  {
+    "name": "Axis My Zone Credit Card",
+    "bankName": "Axis Bank",
+    "cardType": "regular",
+    "description": "Lifestyle card with Swiggy/movie offers and surcharge waivers",
+    "benefits": [
+      {
+        "category": "Swiggy",
+        "type": "cashback",
+        "value": 15,
+        "description": "Swiggy discount; caps/partners apply"
+      },
+      {
+        "category": "Entertainment",
+        "type": "cashback",
+        "value": 10,
+        "description": "Movie/entertainment offers (verify exact offer)"
+      },
+      {
+        "category": "Shopping",
+        "type": "cashback",
+        "value": 1.5,
+        "description": "Cashback on other spends"
+      }
+    ],
+    "feesAndCharges": {
+      "annual": {
+        "value": 500,
+        "type": "fixed"
+      },
+      "joining": {
+        "value": 500,
+        "type": "fixed"
+      },
+      "cashWithdrawal": {
+        "value": 2.5,
+        "type": "percentage",
+        "description": "2.5% (Min. ₹500) of the cash amount"
+      },
+      "forex": {
+        "value": 3.5,
+        "type": "percentage"
+      },
+      "fuelTransaction": {
+        "value": 1,
+        "type": "percentage",
+        "description": "1% surcharge waiver for eligible transactions"
+      }
+    },
+    "link": "https://www.axisbank.com/retail/cards/credit-card/my-zone-credit-card",
+    "updatedAt": "2025-09-06",
+    "dataSource": "manual"
+  },
+  {
+    "name": "LIC Axis Bank Signature Credit Card",
+    "bankName": "Axis Bank",
+    "cardType": "cobrand",
+    "description": "Signature-tier co-branded card with lifestyle and shopping rewards",
+    "benefits": [
+      {
+        "category": "Shopping",
+        "type": "reward_points",
+        "value": 2,
+        "description": "Accelerated rewards on select categories"
+      },
+      {
+        "category": "Dining",
+        "type": "reward_points",
+        "value": 2,
+        "description": "Dining privileges"
+      },
+      {
+        "category": "General",
+        "type": "reward_points",
+        "value": 1
+      }
+    ],
+    "feesAndCharges": {
+      "annual": {
+        "value": 499,
+        "type": "fixed"
+      },
+      "joining": {
+        "value": 499,
+        "type": "fixed"
+      },
+      "cashWithdrawal": {
+        "value": 2.5,
+        "type": "percentage",
+        "description": "2.5% (Min. ₹500)"
+      },
+      "forex": {
+        "value": 3.5,
+        "type": "percentage"
+      },
+      "fuelTransaction": {
+        "value": 1,
+        "type": "percentage",
+        "description": "1% surcharge waiver at select stations"
+      }
+    },
+    "link": "https://www.axisbank.com/retail/cards/credit-card/lic-axis-bank-signature-credit-card",
+    "updatedAt": "2025-09-06",
+    "dataSource": "manual"
+  },
+  {
+    "name": "Flipkart Axis Bank Credit Card",
+    "bankName": "Axis Bank",
+    "cardType": "cobrand",
+    "description": "Best for Flipkart shopping and partner merchants",
+    "benefits": [
+      {
+        "category": "Flipkart",
+        "type": "cashback",
+        "value": 5,
+        "description": "5% cashback on Flipkart"
+      },
+      {
+        "category": "Uber",
+        "type": "cashback",
+        "value": 4,
+        "description": "4% cashback on select partners"
+      },
+      {
+        "category": "BookMyShow",
+        "type": "cashback",
+        "value": 4,
+        "description": "4% cashback on entertainment partners"
+      },
+      {
+        "category": "General",
+        "type": "cashback",
+        "value": 1.5,
+        "description": "1.5% cashback on other spends"
+      }
+    ],
+    "feesAndCharges": {
+      "annual": {
+        "value": 500,
+        "type": "fixed"
+      },
+      "joining": {
+        "value": 500,
+        "type": "fixed"
+      },
+      "cashWithdrawal": {
+        "value": 2.5,
+        "type": "percentage",
+        "description": "2.5% (Min. ₹500)"
+      },
+      "forex": {
+        "value": 3.5,
+        "type": "percentage"
+      },
+      "fuelTransaction": {
+        "value": 1,
+        "type": "percentage",
+        "description": "1% surcharge waiver (caps apply)"
+      }
+    },
+    "link": "https://www.axisbank.com/retail/cards/credit-card/flipkart-axisbank-credit-card",
+    "updatedAt": "2025-09-06",
+    "dataSource": "manual"
+  },
+  {
+    "name": "IndiGo Axis Bank Premium Credit Card",
+    "bankName": "Axis Bank",
+    "cardType": "cobrand",
+    "description": "Unlocks a world of exciting travel rewards with IndiGo BluChips, bringing you closer to your next adventure with every purchase.",
+    "benefits": [
+      {
+        "category": "Travel",
+        "type": "reward_points",
+        "value": 5000,
+        "description": "Welcome bonus of IndiGo BluChips and one complimentary 6E Eats voucher on payment of joining fee"
+      },
+      {
+        "category": "Travel",
+        "type": "reward_points",
+        "value": 5000,
+        "description": "Annual renewal benefit of IndiGo BluChips and one complimentary 6E Eats voucher on payment of annual fee"
+      },
+      {
+        "category": "General",
+        "type": "reward_points",
+        "value": 5000,
+        "description": "Earn 5000 IndiGo BluChips vouchers at spend milestones of ₹2 Lakhs, ₹5 Lakhs, ₹8 Lakhs, and ₹12 Lakhs (total up to 20,000 BluChips)"
+      },
+      {
+        "category": "Travel",
+        "type": "reward_points",
+        "value": 7,
+        "description": "Earn 7 IndiGo BluChips on every ₹100 spent on all IndiGo channels"
+      },
+      {
+        "category": "General",
+        "type": "reward_points",
+        "value": 2,
+        "description": "Collect 2 IndiGo BluChips on every ₹100 spent on all eligible categories"
+      }
+    ],
+    "feesAndCharges": {
+      "annual": {
+        "value": 0,
+        "type": "fixed",
+        "description": "Amount not specified on page"
+      },
+      "joining": {
+        "value": 0,
+        "type": "fixed",
+        "description": "Amount not specified on page"
+      },
+      "cashWithdrawal": {
+        "value": 0,
+        "type": "fixed"
+      },
+      "forex": {
+        "value": 2.5,
+        "type": "percentage",
+        "description": "Lowered forex mark-up on foreign currency transactions"
+      },
+      "fuelTransaction": {
+        "value": 0,
+        "type": "fixed"
+      }
+    },
+    "link": "https://www.axis.bank.in/cards/credit-card/indigo-axis-bank-premium-credit-card",
+    "updatedAt": "2026-03-01",
+    "dataSource": "scraped"
+  },
+  {
+    "name": "IndianOil Axis Bank Credit Card",
+    "bankName": "Axis Bank",
+    "cardType": "cobrand",
+    "description": "Earn accelerated reward points on fuel at IOCL outlets and online shopping, enjoy discounts on movie tickets, and fuel surcharge waivers.",
+    "benefits": [
+      {
+        "category": "Fuel",
+        "type": "reward_points",
+        "value": 20,
+        "description": "20 reward points per ₹100 spent at IOCL fuel outlets (equivalent to 4% value back)"
+      },
+      {
+        "category": "Fuel",
+        "type": "cashback",
+        "value": 1,
+        "description": "1% fuel surcharge waiver"
+      },
+      {
+        "category": "Online Shopping",
+        "type": "reward_points",
+        "value": 5,
+        "description": "5 reward points per ₹100 spent on online shopping (equivalent to 1% value back)"
+      },
+      {
+        "category": "Entertainment",
+        "type": "cashback",
+        "value": 10,
+        "description": "Up to 10% instant discount on BookMyShow movie tickets"
+      },
+      {
+        "category": "General",
+        "type": "reward_points",
+        "value": 1,
+        "description": "1 EDGE REWARD Point per ₹100 spent on other categories (equivalent to 0.2% value back)"
+      }
+    ],
+    "feesAndCharges": {
+      "annual": {
+        "value": 500,
+        "type": "fixed",
+        "description": "Waived on spending ₹3,50,000 in a card anniversary year"
+      },
+      "joining": {
+        "value": 0,
+        "type": "fixed"
+      },
+      "cashWithdrawal": {
+        "value": 0,
+        "type": "fixed"
+      },
+      "forex": {
+        "value": 0,
+        "type": "percentage"
+      },
+      "fuelTransaction": {
+        "value": 0,
+        "type": "percentage"
+      }
+    },
+    "link": "https://www.axis.bank.in/cards/credit-card/indianoil-axis-bank-credit-card",
+    "updatedAt": "2026-03-01",
+    "dataSource": "scraped"
+  },
+  {
+    "name": "Airtel Axis Bank Credit Card",
+    "bankName": "Axis Bank",
+    "cardType": "cobrand",
+    "description": "",
+    "benefits": [
+      {
+        "category": "General",
+        "type": "reward_points",
+        "value": 1,
+        "description": ""
+      }
+    ],
+    "feesAndCharges": {
+      "annual": {
+        "value": 0,
+        "type": "fixed",
+        "description": ""
+      },
+      "joining": {
+        "value": 0,
+        "type": "fixed",
+        "description": ""
+      },
+      "cashWithdrawal": {
+        "value": 0,
+        "type": "fixed",
+        "description": ""
+      },
+      "forex": {
+        "value": 0,
+        "type": "fixed",
+        "description": ""
+      },
+      "fuelTransaction": {
+        "value": 0,
+        "type": "fixed",
+        "description": ""
+      }
+    },
+    "link": "https://www.axis.bank.in/cards/credit-card/airtel-axis-bank-credit-card",
+    "updatedAt": "2026-03-01",
+    "dataSource": "scraped"
+  },
+  {
+    "name": "Unknown Card",
+    "bankName": "Axis Bank",
+    "cardType": "regular",
+    "description": "Information could not be extracted due to access denial.",
+    "benefits": [
+      {
+        "category": "General",
+        "type": "reward_points",
+        "value": 1
+      }
+    ],
+    "feesAndCharges": {
+      "annual": {
+        "value": 0,
+        "type": "fixed"
+      },
+      "joining": {
+        "value": 0,
+        "type": "fixed"
+      },
+      "cashWithdrawal": {
+        "value": 0,
+        "type": "fixed"
+      },
+      "forex": {
+        "value": 0,
+        "type": "fixed"
+      },
+      "fuelTransaction": {
+        "value": 0,
+        "type": "fixed"
+      }
+    },
+    "link": "https://www.axis.bank.in/cards/credit-card/cashback-credit-card",
+    "updatedAt": "2026-03-01",
+    "dataSource": "scraped"
+  },
+  {
+    "name": "Axis Bank Select Credit Card",
+    "bankName": "Axis Bank",
+    "cardType": "regular",
+    "description": "Card details are not available as access to the page was denied.",
+    "benefits": [
+      {
+        "category": "General",
+        "type": "reward_points",
+        "value": 1,
+        "description": "Base reward rate (default due to access denied)"
+      }
+    ],
+    "feesAndCharges": {
+      "annual": {
+        "value": 0,
+        "type": "fixed",
+        "description": "Not available due to access denied"
+      },
+      "joining": {
+        "value": 0,
+        "type": "fixed",
+        "description": "Not available due to access denied"
+      },
+      "cashWithdrawal": {
+        "value": 0,
+        "type": "fixed",
+        "description": "Not available due to access denied"
+      },
+      "forex": {
+        "value": 0,
+        "type": "fixed",
+        "description": "Not available due to access denied"
+      },
+      "fuelTransaction": {
+        "value": 0,
+        "type": "fixed",
+        "description": "Not available due to access denied"
+      }
+    },
+    "link": "https://www.axis.bank.in/cards/credit-card/axis-bank-select-credit-card",
+    "updatedAt": "2026-03-01",
+    "dataSource": "scraped"
+  },
+  {
+    "name": "Axis HORIZON Credit Card",
+    "bankName": "Axis Bank",
+    "cardType": "regular",
+    "description": "A credit card offering accelerated rewards on travel, international lounge access, and general spending, with significant welcome and renewal EDGE Miles benefits.",
+    "benefits": [
+      {
+        "category": "Travel",
+        "type": "reward_points",
+        "value": 5,
+        "description": "5 EDGE Miles on every ₹100 spent on Axis Bank Travel EDGE portal and direct airline websites (1 EDGE Mile = ₹1)"
+      },
+      {
+        "category": "General",
+        "type": "reward_points",
+        "value": 2,
+        "description": "2 EDGE Miles per ₹100 on all other spends (1 EDGE Mile = ₹1)"
+      },
+      {
+        "category": "Fuel",
+        "type": "cashback",
+        "value": 1,
+        "description": "1% Surcharge waiver for fuel transactions between ₹400 – ₹5000 (max. capping of ₹400 per statement month)"
+      }
+    ],
+    "feesAndCharges": {
+      "annual": {
+        "value": 0,
+        "type": "fixed"
+      },
+      "joining": {
+        "value": 0,
+        "type": "fixed"
+      },
+      "cashWithdrawal": {
+        "value": 0,
+        "type": "fixed"
+      },
+      "forex": {
+        "value": 0,
+        "type": "fixed"
+      },
+      "fuelTransaction": {
+        "value": 0,
+        "type": "fixed"
+      }
+    },
+    "link": "https://www.axis.bank.in/cards/credit-card/axis-horizon-credit-card",
+    "updatedAt": "2026-03-02",
+    "dataSource": "scraped"
+  },
+  {
+    "name": "Axis Bank Magnus Credit Card",
+    "bankName": "Axis Bank",
+    "cardType": "premium",
+    "description": "A premium credit card offering extensive travel benefits, dining discounts, and high reward points on general and travel spends.",
+    "benefits": [
+      {
+        "category": "General",
+        "type": "reward_points",
+        "value": 12,
+        "description": "EDGE Reward points per ₹200 on spends up to ₹1.50 Lakhs per calendar month"
+      },
+      {
+        "category": "General",
+        "type": "reward_points",
+        "value": 35,
+        "description": "EDGE Reward points per ₹200 on incremental spends above ₹1.50 Lakhs per calendar month"
+      },
+      {
+        "category": "Travel",
+        "type": "reward_points",
+        "value": 60,
+        "description": "5X EDGE Reward points (equivalent to 60 points per ₹200) on spends via Travel EDGE"
+      },
+      {
+        "category": "Travel",
+        "type": "reward_points",
+        "value": 2,
+        "description": "Partner miles for every 5 EDGE Reward points across 20 travel partners"
+      },
+      {
+        "category": "Travel",
+        "type": "other",
+        "value": 12500,
+        "description": "Welcome benefit: Choose one voucher worth ₹12,500 (Luxe, Postcard Hotels, or Yatra gift voucher)"
+      },
+      {
+        "category": "Travel",
+        "type": "other",
+        "value": 0,
+        "description": "Unlimited complimentary international lounge visits with Priority Pass, plus 4 additional guest visits per year"
+      },
+      {
+        "category": "Travel",
+        "type": "other",
+        "value": 0,
+        "description": "Unlimited visits to select airport lounges in India"
+      },
+      {
+        "category": "Travel",
+        "type": "discount",
+        "value": 15,
+        "description": "Up to 15% off on international & domestic Oberoi & Trident Hotels"
+      },
+      {
+        "category": "Dining",
+        "type": "discount",
+        "value": 30,
+        "description": "Up to 30% discount at over 4,000 restaurants across India"
+      },
+      {
+        "category": "General",
+        "type": "other",
+        "value": 0,
+        "description": "Insurance benefits including purchase protection and lost card liability programs"
+      }
+    ],
+    "feesAndCharges": {
+      "annual": {
+        "value": 12500,
+        "type": "fixed",
+        "description": "Waived off on spend of ₹25 Lakhs in preceding year"
+      },
+      "joining": {
+        "value": 0,
+        "type": "fixed"
+      },
+      "cashWithdrawal": {
+        "value": 0,
+        "type": "fixed",
+        "description": "No cash withdrawal fees"
+      },
+      "forex": {
+        "value": 2,
+        "type": "percentage",
+        "description": "Reduced mark-up fee on foreign transactions"
+      },
+      "fuelTransaction": {
+        "value": 1,
+        "type": "percentage",
+        "description": "1% fuel surcharge waiver for transactions between ₹400 to ₹4000 (Capped at ₹400 per month)"
+      }
+    },
+    "link": "https://www.axis.bank.in/cards/credit-card/axis-bank-magnus-credit-card",
+    "updatedAt": "2026-03-02",
+    "dataSource": "scraped"
+  },
+  {
+    "name": "Axis Bank Atlas Credit Card",
+    "bankName": "Axis Bank",
+    "cardType": "regular",
+    "description": "An airlines agnostic travel credit card designed to benefit you on every travel you make. Enjoy exclusive travel benefits and much more.",
+    "benefits": [
+      {
+        "category": "Travel",
+        "type": "cashback",
+        "value": 5,
+        "description": "5 EDGE Miles on travel spends (1 EDGE Mile = ₹1)"
+      },
+      {
+        "category": "General",
+        "type": "cashback",
+        "value": 2,
+        "description": "2 EDGE Miles on other spends (1 EDGE Mile = ₹1)"
+      }
+    ],
+    "feesAndCharges": {
+      "annual": {
+        "value": 0,
+        "type": "fixed"
+      },
+      "joining": {
+        "value": 0,
+        "type": "fixed"
+      },
+      "cashWithdrawal": {
+        "value": 0,
+        "type": "fixed"
+      },
+      "forex": {
+        "value": 0,
+        "type": "fixed"
+      },
+      "fuelTransaction": {
+        "value": 0,
+        "type": "fixed"
+      }
+    },
+    "link": "https://www.axis.bank.in/cards/credit-card/axis-bank-atlas-credit-card",
+    "updatedAt": "2026-03-02",
+    "dataSource": "scraped"
+  },
+  {
+    "name": "Axis Bank Reserve Credit Card",
+    "bankName": "Axis Bank",
+    "cardType": "premium",
+    "description": "A luxury credit card enriched with best-in-class privileges and unbridled indulgences, designed to make every journey special.",
+    "benefits": [
+      {
+        "category": "Travel",
+        "type": "reward_points",
+        "value": 0,
+        "description": "Complimentary airport concierge services"
+      },
+      {
+        "category": "Travel",
+        "type": "reward_points",
+        "value": 0,
+        "description": "Complimentary Priority Pass membership with unlimited visits and unlimited domestic lounge visits"
+      },
+      {
+        "category": "Travel",
+        "type": "reward_points",
+        "value": 0,
+        "description": "Club ITC Culinaire, Accorplus, and Club Marriott Asia Pacific memberships"
+      },
+      {
+        "category": "Travel",
+        "type": "cashback",
+        "value": 15,
+        "description": "15% savings at Postcard Hotel"
+      },
+      {
+        "category": "Dining",
+        "type": "reward_points",
+        "value": 0,
+        "description": "Complimentary EazyDiner Prime membership"
+      },
+      {
+        "category": "Dining",
+        "type": "reward_points",
+        "value": 0,
+        "description": "Complimentary Swiggy One Membership"
+      },
+      {
+        "category": "Entertainment",
+        "type": "reward_points",
+        "value": 0,
+        "description": "Complimentary tickets on BookMyShow"
+      },
+      {
+        "category": "Lifestyle",
+        "type": "reward_points",
+        "value": 0,
+        "description": "Complimentary golf rounds"
+      },
+      {
+        "category": "General",
+        "type": "reward_points",
+        "value": 1,
+        "description": "Rewards Program"
+      }
+    ],
+    "feesAndCharges": {
+      "annual": {
+        "value": 0,
+        "type": "fixed",
+        "description": "Not specified on page"
+      },
+      "joining": {
+        "value": 0,
+        "type": "fixed",
+        "description": "Not specified on page"
+      },
+      "cashWithdrawal": {
+        "value": 0,
+        "type": "fixed",
+        "description": "Not specified on page"
+      },
+      "forex": {
+        "value": 0,
+        "type": "fixed",
+        "description": "Not specified on page"
+      },
+      "fuelTransaction": {
+        "value": 0,
+        "type": "fixed",
+        "description": "Not specified on page"
+      }
+    },
+    "link": "https://www.axis.bank.in/cards/credit-card/reserve-credit-card",
+    "updatedAt": "2026-03-02",
+    "dataSource": "scraped"
+  },
+  {
+    "name": "REWARDS Credit Card",
+    "bankName": "Axis Bank",
+    "cardType": "regular",
+    "description": "Earn welcome benefit, milestone, membership benefits and complimentary lounge access with Axis Bank's REWARDS Credit Card.",
+    "benefits": [
+      {
+        "category": "General",
+        "type": "reward_points",
+        "value": 0.32,
+        "description": "2 EDGE REWARD Points on every ₹125 spend (0.32% equivalent, based on 1 EDGE REWARD Point = ₹0.20)"
+      },
+      {
+        "category": "General",
+        "type": "reward_points",
+        "value": 0,
+        "description": "5,000 EDGE REWARD Points (worth ₹1000) on cumulative net spends of ₹1,000 or above within 30 days of card issuance"
+      },
+      {
+        "category": "General",
+        "type": "reward_points",
+        "value": 0,
+        "description": "1,500 EDGE REWARD points (worth ₹300) on net spends of ₹30,000 per statement cycle as a milestone benefit"
+      },
+      {
+        "category": "Dining",
+        "type": "cashback",
+        "value": 30,
+        "description": "₹150 instant discount on Swiggy on a minimum Transaction value of ₹500 (30% discount)"
+      },
+      {
+        "category": "Travel",
+        "type": "cashback",
+        "value": 0,
+        "description": "2 complimentary domestic lounge access per quarter (estimated annual value ₹12,000)"
+      },
+      {
+        "category": "General",
+        "type": "cashback",
+        "value": 0,
+        "description": "Bouquet of memberships up to ₹1,000 every anniversary year"
+      }
+    ],
+    "feesAndCharges": {
+      "annual": {
+        "value": 0,
+        "type": "fixed",
+        "description": "Not specified on page, assumed 0."
+      },
+      "joining": {
+        "value": 0,
+        "type": "fixed",
+        "description": "Not specified on page, assumed 0."
+      },
+      "cashWithdrawal": {
+        "value": 0,
+        "type": "fixed",
+        "description": "Not specified on page, assumed 0."
+      },
+      "forex": {
+        "value": 0,
+        "type": "percentage",
+        "description": "Not specified on page, assumed 0."
+      },
+      "fuelTransaction": {
+        "value": 0,
+        "type": "percentage",
+        "description": "Fuel surcharge waiver is a benefit, not a fee. Fee not explicitly stated, assumed 0."
+      }
+    },
+    "link": "https://www.axis.bank.in/cards/credit-card/rewards-credit-card",
+    "updatedAt": "2026-03-02",
+    "dataSource": "scraped"
+  }
+]
