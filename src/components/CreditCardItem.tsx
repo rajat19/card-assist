@@ -2,6 +2,7 @@ import { BenefitType, CardType, CreditCard } from '@/types/creditcard';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { CreditCard as CardIcon, Banknote, Award } from 'lucide-react';
+import { getBankIcon } from '@/data/bankIcons';
 
 interface CreditCardItemProps {
   card: CreditCard;
@@ -18,13 +19,19 @@ const CreditCardItem = ({ card }: CreditCardItemProps) => {
     }
   };
 
+  const bankIcon = getBankIcon(card.bankName);
+
   return (
     <Card className="bg-gradient-card shadow-card hover:shadow-card-hover transition-all duration-300 border-0">
       <CardHeader className="pb-3">
         <div className="flex items-start justify-between">
           <div className="flex items-center gap-3">
             <div className="p-2 bg-financial-light rounded-lg">
-              <CardIcon className="h-5 w-5 text-financial-blue" />
+              {bankIcon ? (
+                <img src={bankIcon} alt={card.bankName} className="h-5 w-5 object-contain" />
+              ) : (
+                <CardIcon className="h-5 w-5 text-financial-blue" />
+              )}
             </div>
             <div>
               <CardTitle className="text-lg text-card-foreground">{card.name}</CardTitle>
@@ -36,12 +43,12 @@ const CreditCardItem = ({ card }: CreditCardItemProps) => {
           </Badge>
         </div>
       </CardHeader>
-      
+
       <CardContent className="space-y-4">
         {card.description && (
           <p className="text-sm text-muted-foreground">{card.description}</p>
         )}
-        
+
         <div className="space-y-1 text-sm">
           <div className="flex items-center justify-between">
             <span className="text-muted-foreground">Joining Fee</span>
@@ -56,7 +63,7 @@ const CreditCardItem = ({ card }: CreditCardItemProps) => {
             </span>
           </div>
         </div>
-        
+
         <div className="space-y-2">
           <h4 className="text-sm font-medium text-card-foreground">Key Benefits</h4>
           <div className="space-y-2 max-h-40 overflow-y-auto">

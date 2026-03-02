@@ -338,44 +338,6 @@
     "dataSource": "scraped"
   },
   {
-    "name": "Unknown Card",
-    "bankName": "Axis Bank",
-    "cardType": "regular",
-    "description": "Information could not be extracted due to access denial.",
-    "benefits": [
-      {
-        "category": "General",
-        "type": "reward_points",
-        "value": 1
-      }
-    ],
-    "feesAndCharges": {
-      "annual": {
-        "value": 0,
-        "type": "fixed"
-      },
-      "joining": {
-        "value": 0,
-        "type": "fixed"
-      },
-      "cashWithdrawal": {
-        "value": 0,
-        "type": "fixed"
-      },
-      "forex": {
-        "value": 0,
-        "type": "fixed"
-      },
-      "fuelTransaction": {
-        "value": 0,
-        "type": "fixed"
-      }
-    },
-    "link": "https://www.axis.bank.in/cards/credit-card/cashback-credit-card",
-    "updatedAt": "2026-03-01",
-    "dataSource": "scraped"
-  },
-  {
     "name": "Axis Bank Select Credit Card",
     "bankName": "Axis Bank",
     "cardType": "regular",
