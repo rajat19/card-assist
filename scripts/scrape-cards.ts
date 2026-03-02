@@ -23,6 +23,7 @@ import {
     SUSPICIOUS_CHANGE_FACTOR,
     CARDS_DIR,
     BANK_FILES,
+    retryWithBackoff,
 } from './scrape-config.js';
 
 // ── Types ──────────────────────────────────────────────────────────────────────
@@ -180,7 +181,10 @@ async function extractCardData(
     const model = genAI.getGenerativeModel({ model: GEMINI_MODEL });
     const prompt = buildExtractionPrompt(pageText, existingCard);
 
-    const result = await model.generateContent(prompt);
+    const result = await retryWithBackoff(
+        () => model.generateContent(prompt),
+        `AI extraction for "${existingCard.name}"`,
+    );
     const text = result.response.text();
 
     // Try to extract JSON from response

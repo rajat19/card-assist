@@ -12,6 +12,7 @@
     "preview": "vite preview",
     "seed:cards": "tsx scripts/seed-cards.ts",
     "scrape:cards": "node --env-file=.env --import=tsx scripts/scrape-cards.ts",
+    "add:card": "node --env-file=.env --import=tsx scripts/add-card.ts",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
