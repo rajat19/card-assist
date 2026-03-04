@@ -5,6 +5,8 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 import { getBankIcon, getBankColor } from '@/data/bankIcons';
 import { Check, X, CreditCard as CardIcon, Scale } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import BenefitPill from '@/components/BenefitPill';
+import PerkItem from '@/components/PerkItem';
 
 interface CompareDialogProps {
     open: boolean;
@@ -128,30 +130,40 @@ export function CompareDialog({ open, onOpenChange }: CompareDialogProps) {
                             })}
 
 
-                            {/* --- ROW: Top Perks --- */}
+                            {/* --- ROW: Benefits & Perks --- */}
                             <div className="sticky left-0 bg-background z-10 font-medium text-muted-foreground py-6 border-b border-border/50">
-                                Top Perks
+                                Benefits & Perks
                             </div>
-                            {selectedCards.map(card => (
-                                <div key={`perks-${card.name}`} className="h-full pb-2 border-x border-b border-border/50 p-5 bg-background">
-                                    <ul className="space-y-3.5">
-                                        {card.perks?.slice(0, 4).map((perk, i) => (
-                                            <li key={i} className="flex gap-2.5 text-sm">
-                                                <Check className="h-4 w-4 shrink-0 mt-0.5 text-green-500" />
-                                                <span className="text-foreground/90 leading-snug break-words">{perk.title}</span>
-                                            </li>
-                                        ))}
-                                        {(!card.perks || card.perks.length === 0) && (
-                                            <li className="text-sm text-muted-foreground italic h-[40px]">No listed perks</li>
+                            {selectedCards.map(card => {
+                                const bankColor = getBankColor(card.bankName);
+                                return (
+                                    <div key={`perks-${card.name}`} className="h-full pb-2 border-x border-b border-border/50 p-5 bg-background flex flex-col gap-5">
+                                        {card.benefits && card.benefits.length > 0 && (
+                                            <div className="space-y-2.5">
+                                                <h4 className="text-[13px] uppercase tracking-wider font-semibold text-muted-foreground">Key Benefits</h4>
+                                                <div className="flex flex-wrap gap-1.5">
+                                                    {card.benefits.map((benefit, i) => (
+                                                        <BenefitPill key={i} benefit={benefit} accentColor={bankColor.accent} />
+                                                    ))}
+                                                </div>
+                                            </div>
                                         )}
-                                        {card.perks && card.perks.length > 4 && (
-                                            <li className="text-xs text-muted-foreground font-medium pt-1">
-                                                +{card.perks.length - 4} more perks
-                                            </li>
+                                        {card.perks && card.perks.length > 0 && (
+                                            <div className="space-y-2.5">
+                                                <h4 className="text-[13px] uppercase tracking-wider font-semibold text-muted-foreground mt-2">Perks</h4>
+                                                <ul className="space-y-3">
+                                                    {card.perks.map((perk, i) => (
+                                                        <PerkItem key={i} perk={perk} />
+                                                    ))}
+                                                </ul>
+                                            </div>
                                         )}
-                                    </ul>
-                                </div>
-                            ))}
+                                        {(!card.benefits || card.benefits.length === 0) && (!card.perks || card.perks.length === 0) && (
+                                            <div className="text-sm text-muted-foreground italic">No listed benefits or perks</div>
+                                        )}
+                                    </div>
+                                );
+                            })}
 
 
                             {/* --- ROW: Apply Button --- */}

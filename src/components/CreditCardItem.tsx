@@ -70,27 +70,27 @@ const CreditCardItem = ({ card, rank, aiReason }: CreditCardItemProps) => {
           )}
 
           <CardHeader className="pb-3 pl-5">
-            <div className="flex items-start justify-between pr-8">
+            <div className="flex items-start justify-between gap-2">
               <div className="flex items-center gap-3">
                 <div
-                  className="p-2 rounded-lg border"
+                  className="p-2.5 rounded-lg border shrink-0"
                   style={{ borderColor: `${bankColor.accent}33`, background: `${bankColor.bg}` }}
                 >
                   {bankIcon ? (
-                    <img src={bankIcon} alt={card.bankName} className="h-5 w-5 object-contain" />
+                    <img src={bankIcon} alt={card.bankName} className="h-7 w-7 object-contain" />
                   ) : (
-                    <CardIcon className="h-5 w-5" style={{ color: bankColor.accent }} />
+                    <CardIcon className="h-7 w-7" style={{ color: bankColor.accent }} />
                   )}
                 </div>
-                <div>
+                <div className="min-w-0">
                   <CardTitle className="text-lg text-card-foreground group-hover:text-financial-blue transition-colors flex items-center gap-1.5">
                     {card.name}
-                    <ExternalLink className="h-3.5 w-3.5 opacity-0 group-hover:opacity-60 transition-opacity" />
+                    <ExternalLink className="h-3.5 w-3.5 opacity-0 group-hover:opacity-60 transition-opacity shrink-0" />
                   </CardTitle>
                   <p className="text-sm text-muted-foreground">{card.bankName}</p>
                 </div>
               </div>
-              <Badge className={`${getCardTypeColor(card.cardType)} capitalize font-medium shrink-0`}>
+              <Badge className={`${getCardTypeColor(card.cardType)} capitalize font-medium shrink-0 mt-1`}>
                 {card.cardType}
               </Badge>
             </div>
@@ -161,7 +161,7 @@ const CreditCardItem = ({ card, rank, aiReason }: CreditCardItemProps) => {
                 <h4 className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Perks</h4>
                 <div className="space-y-1">
                   {card.perks.slice(0, expanded ? undefined : 2).map((perk, index) => (
-                    <PerkItem key={index} perk={perk} accentColor={bankColor.accent} />
+                    <PerkItem key={index} perk={perk} showDescription={false} />
                   ))}
                   {card.perks.length > 2 && !expanded && (
                     <button

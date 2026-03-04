@@ -297,22 +297,22 @@
     "perks": [
       {
         "category": "Online Shopping",
-        "title": "Welcome Vouchers worth over ₹5",
+        "title": "EazyDiner Prime",
         "description": "Welcome Vouchers worth over ₹5,000 from Tata CLiQ, Tata Croma, EazyDiner, EaseMyTrip and more"
       },
       {
         "category": "Insurance",
-        "title": "Air Accident Insurance cover up to ₹1 crore",
+        "title": "Insurance Cover",
         "description": "Air Accident Insurance cover up to ₹1 crore"
       },
       {
         "category": "General",
-        "title": "3",
+        "title": "Spend Based Rewards",
         "description": "3,000 Reward Points on ₹3 lakh spend & 1,500 for every additional ₹1 lakh spend (up to 15,000 reward points per year)"
       },
       {
         "category": "Insurance",
-        "title": "Personal Accident Insurance Cover of ₹2 lakh (R...",
+        "title": "Insurance Cover",
         "description": "Personal Accident Insurance Cover of ₹2 lakh (Rupay Variant)"
       }
     ]
@@ -508,37 +508,37 @@
     "perks": [
       {
         "category": "Travel",
-        "title": "Unlimited international and domestic airport lo...",
+        "title": "Lounge Access",
         "description": "Unlimited international and domestic airport lounge access for primary cardholder"
       },
       {
         "category": "Entertainment",
-        "title": "Up to 4 complimentary golf rounds per month bas...",
+        "title": "Golf Privileges",
         "description": "Up to 4 complimentary golf rounds per month based on eligible spends"
       },
       {
         "category": "Entertainment",
-        "title": "Buy One Get One Free on BookMyShow tickets",
+        "title": "BOGO Movie Tickets",
         "description": "Buy One Get One Free on BookMyShow tickets, up to ₹750, four times a month"
       },
       {
         "category": "Shopping",
-        "title": "Birthday shopping voucher from TATA CLiQ worth ₹5",
+        "title": "Gift Vouchers",
         "description": "Birthday shopping voucher from TATA CLiQ worth ₹5,000 (for American Express Cardholders)"
       },
       {
         "category": "Travel",
-        "title": "No cancellation charges on domestic flight and ...",
+        "title": "No cancellation charges on",
         "description": "No cancellation charges on domestic flight and hotel bookings, up to ₹12,000 (twice yearly)"
       },
       {
         "category": "General",
-        "title": "24x7 Concierge Service",
+        "title": "Concierge Services",
         "description": "24x7 Concierge Service"
       },
       {
         "category": "Insurance",
-        "title": "Air Accident Insurance cover up to ₹3 crore",
+        "title": "Insurance Cover",
         "description": "Air Accident Insurance cover up to ₹3 crore"
       }
     ]
@@ -605,52 +605,47 @@
     "perks": [
       {
         "category": "Travel",
-        "title": "Flight vouchers worth ₹5",
+        "title": "Flight Gift Vouchers",
         "description": "Flight vouchers worth ₹5,000 on spends of ₹25,000 within 60 days of card activation."
       },
       {
         "category": "Travel",
-        "title": "Exclusive Hotel vouchers worth ₹2",
+        "title": "Hotel Gift Vouchers",
         "description": "Exclusive Hotel vouchers worth ₹2,000."
       },
       {
         "category": "Entertainment",
-        "title": "Buy one get one free (up to ₹500 off on second ...",
+        "title": "BOGO Movie Tickets",
         "description": "Buy one get one free (up to ₹500 off on second ticket) on BookMyShow, twice a month."
       },
       {
         "category": "Travel",
-        "title": "2 complimentary Pranaam services annually (1 on...",
+        "title": "Pranaam Services",
         "description": "2 complimentary Pranaam services annually (1 on activation, 1 on ₹3 lakh spends)."
       },
       {
         "category": "Travel",
-        "title": "16 complimentary Premium Lounge upgrades annually",
+        "title": "Complimentary Premium Lounge Upgrades",
         "description": "16 complimentary Premium Lounge upgrades annually."
       },
       {
         "category": "Travel",
-        "title": "4 complimentary valet parking services annually",
+        "title": "Complimentary Valet/Parking Services",
         "description": "4 complimentary valet parking services annually."
       },
       {
         "category": "Travel",
-        "title": "4 complimentary premium car parking services on...",
-        "description": "4 complimentary premium car parking services on card activation annually."
-      },
-      {
-        "category": "Travel",
-        "title": "2 porter services for every ₹1 lakh spent",
+        "title": "Porter Services",
         "description": "2 porter services for every ₹1 lakh spent, up to 8 annually."
       },
       {
         "category": "Travel",
-        "title": "2 complimentary international airport lounge ac...",
+        "title": "International Lounge Access",
         "description": "2 complimentary international airport lounge access annually."
       },
       {
         "category": "Travel",
-        "title": "4 complimentary domestic airport lounge access ...",
+        "title": "Domestic Lounge Access",
         "description": "4 complimentary domestic airport lounge access quarterly."
       }
     ]
@@ -754,7 +749,7 @@
     "perks": [
       {
         "category": "Travel",
-        "title": "Up to 4 Porter services worth ₹2000 for ₹1 lakh...",
+        "title": "Porter Services",
         "description": "Up to 4 Porter services worth ₹2000 for ₹1 lakh annual spend"
       }
     ]
@@ -871,17 +866,17 @@
     "perks": [
       {
         "category": "General",
-        "title": "10",
+        "title": "10,000 Skywards Miles as",
         "description": "10,000 Skywards Miles as a joining benefit"
       },
       {
         "category": "General",
-        "title": "10",
+        "title": "10,000 Skywards Miles on",
         "description": "10,000 Skywards Miles on annual renewal"
       },
       {
         "category": "Entertainment",
-        "title": "Buy one get one free on movie tickets via BookM...",
+        "title": "BOGO Movie Tickets",
         "description": "Buy one get one free on movie tickets via BookMyShow, up to ₹750 off, four times a month"
       }
     ]

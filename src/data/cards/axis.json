@@ -213,17 +213,17 @@
     "perks": [
       {
         "category": "Travel",
-        "title": "Welcome bonus of IndiGo BluChips and one compli...",
+        "title": "Welcome Benefit",
         "description": "Welcome bonus of IndiGo BluChips and one complimentary 6E Eats voucher on payment of joining fee"
       },
       {
         "category": "Travel",
-        "title": "Annual renewal benefit of IndiGo BluChips and o...",
+        "title": "Renewal Benefit",
         "description": "Annual renewal benefit of IndiGo BluChips and one complimentary 6E Eats voucher on payment of annual fee"
       },
       {
         "category": "General",
-        "title": "Earn 5000 IndiGo BluChips vouchers at spend mil...",
+        "title": "Milestone Benefit",
         "description": "Earn 5000 IndiGo BluChips vouchers at spend milestones of ₹2 Lakhs, ₹5 Lakhs, ₹8 Lakhs, and ₹12 Lakhs (total up to 20,000 BluChips)"
       }
     ]
@@ -333,50 +333,6 @@
       }
     },
     "link": "https://www.axis.bank.in/cards/credit-card/airtel-axis-bank-credit-card",
-    "updatedAt": "2026-03-01",
-    "dataSource": "scraped"
-  },
-  {
-    "name": "Axis Bank Select Credit Card",
-    "bankName": "Axis Bank",
-    "cardType": "regular",
-    "description": "Card details are not available as access to the page was denied.",
-    "benefits": [
-      {
-        "category": "General",
-        "type": "reward_points",
-        "value": 1,
-        "description": "Base reward rate (default due to access denied)"
-      }
-    ],
-    "feesAndCharges": {
-      "annual": {
-        "value": 0,
-        "type": "fixed",
-        "description": "Not available due to access denied"
-      },
-      "joining": {
-        "value": 0,
-        "type": "fixed",
-        "description": "Not available due to access denied"
-      },
-      "cashWithdrawal": {
-        "value": 0,
-        "type": "fixed",
-        "description": "Not available due to access denied"
-      },
-      "forex": {
-        "value": 0,
-        "type": "fixed",
-        "description": "Not available due to access denied"
-      },
-      "fuelTransaction": {
-        "value": 0,
-        "type": "fixed",
-        "description": "Not available due to access denied"
-      }
-    },
-    "link": "https://www.axis.bank.in/cards/credit-card/axis-bank-select-credit-card",
     "updatedAt": "2026-03-01",
     "dataSource": "scraped"
   },
@@ -506,22 +462,22 @@
     "perks": [
       {
         "category": "Travel",
-        "title": "Welcome benefit: Choose one voucher worth ₹12",
+        "title": "Welcome Benefit",
         "description": "Welcome benefit: Choose one voucher worth ₹12,500 (Luxe, Postcard Hotels, or Yatra gift voucher)"
       },
       {
         "category": "Travel",
-        "title": "Unlimited complimentary international lounge vi...",
+        "title": "Priority Pass Membership",
         "description": "Unlimited complimentary international lounge visits with Priority Pass, plus 4 additional guest visits per year"
       },
       {
         "category": "Travel",
-        "title": "Unlimited visits to select airport lounges in I...",
+        "title": "Domestic Lounge Access",
         "description": "Unlimited visits to select airport lounges in India"
       },
       {
         "category": "General",
-        "title": "Insurance benefits including purchase protectio...",
+        "title": "Insurance Cover",
         "description": "Insurance benefits including purchase protection and lost card liability programs"
       }
     ]
@@ -623,37 +579,37 @@
     "perks": [
       {
         "category": "Travel",
-        "title": "Complimentary airport concierge services",
+        "title": "Concierge Services",
         "description": "Complimentary airport concierge services"
       },
       {
         "category": "Travel",
-        "title": "Complimentary Priority Pass membership with unl...",
+        "title": "Priority Pass Membership",
         "description": "Complimentary Priority Pass membership with unlimited visits and unlimited domestic lounge visits"
       },
       {
         "category": "Travel",
-        "title": "Club ITC Culinaire",
+        "title": "Premium Memberships",
         "description": "Club ITC Culinaire, Accorplus, and Club Marriott Asia Pacific memberships"
       },
       {
         "category": "Dining",
-        "title": "Complimentary EazyDiner Prime membership",
+        "title": "EazyDiner Prime",
         "description": "Complimentary EazyDiner Prime membership"
       },
       {
         "category": "Dining",
-        "title": "Complimentary Swiggy One Membership",
+        "title": "Swiggy One Membership",
         "description": "Complimentary Swiggy One Membership"
       },
       {
         "category": "Entertainment",
-        "title": "Complimentary tickets on BookMyShow",
+        "title": "Movie Tickets",
         "description": "Complimentary tickets on BookMyShow"
       },
       {
         "category": "Lifestyle",
-        "title": "Complimentary golf rounds",
+        "title": "Golf Privileges",
         "description": "Complimentary golf rounds"
       }
     ]
@@ -710,22 +666,22 @@
     "perks": [
       {
         "category": "General",
-        "title": "5",
+        "title": "Spend Based Rewards",
         "description": "5,000 EDGE REWARD Points (worth ₹1000) on cumulative net spends of ₹1,000 or above within 30 days of card issuance"
       },
       {
         "category": "General",
-        "title": "1",
+        "title": "Milestone Benefit",
         "description": "1,500 EDGE REWARD points (worth ₹300) on net spends of ₹30,000 per statement cycle as a milestone benefit"
       },
       {
         "category": "Travel",
-        "title": "2 complimentary domestic lounge access per quar...",
+        "title": "Domestic Lounge Access",
         "description": "2 complimentary domestic lounge access per quarter (estimated annual value ₹12,000)"
       },
       {
         "category": "General",
-        "title": "Bouquet of memberships up to ₹1",
+        "title": "Renewal Benefit",
         "description": "Bouquet of memberships up to ₹1,000 every anniversary year"
       }
     ]

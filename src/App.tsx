@@ -5,7 +5,6 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
-import AllCards from "./pages/AllCards";
 import NotFound from "./pages/NotFound";
 import { CompareProvider } from "./contexts/CompareContext";
 import { CompareBar } from "./components/CompareBar";
@@ -20,7 +19,6 @@ const CompareApp = () => {
     <>
       <Routes>
         <Route path="/" element={<Index />} />
-        <Route path="/all" element={<AllCards />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <CompareBar onCompareClick={() => setCompareOpen(true)} />

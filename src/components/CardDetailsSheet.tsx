@@ -13,6 +13,7 @@ import BenefitPill from '@/components/BenefitPill';
 import PerkItem from '@/components/PerkItem';
 import { ExternalLink, CreditCard as CardIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import PerkItemIcon from './PerkItemIcon';
 
 interface CardDetailsSheetProps {
     card: CreditCard | null;
@@ -120,9 +121,7 @@ export function CardDetailsSheet({ card, open, onOpenChange }: CardDetailsSheetP
                                 <div className="space-y-4">
                                     {card.perks.map((perk: Perk, i: number) => (
                                         <div key={i} className="flex gap-3 p-3 rounded-lg border border-border/50 bg-background shadow-sm">
-                                            <div className="mt-0.5">
-                                                <PerkItem perk={perk} accentColor={bankColor.accent} hideText />
-                                            </div>
+                                            <PerkItemIcon perk={perk} />
                                             <div>
                                                 <h5 className="text-sm font-medium text-foreground mb-1">{perk.title}</h5>
                                                 {perk.description && perk.description !== perk.title && (
