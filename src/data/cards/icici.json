@@ -217,12 +217,6 @@
         "description": "2 reward points per ₹100 on Domestic Spend"
       },
       {
-        "category": "Online Shopping",
-        "type": "cashback",
-        "value": 5000,
-        "description": "Welcome Vouchers worth over ₹5,000 from Tata CLiQ, Tata Croma, EazyDiner, EaseMyTrip and more"
-      },
-      {
         "category": "Travel",
         "type": "reward_points",
         "value": 2,
@@ -247,28 +241,10 @@
         "description": "25% off up to ₹150 on movie tickets on BookMyShow and INOX, twice a month"
       },
       {
-        "category": "Insurance",
-        "type": "reward_points",
-        "value": 10000000,
-        "description": "Air Accident Insurance cover up to ₹1 crore"
-      },
-      {
         "category": "Fuel",
         "type": "cashback",
         "value": 1,
         "description": "1% fuel surcharge waiver on transactions worth ₹400–₹4,000"
-      },
-      {
-        "category": "General",
-        "type": "reward_points",
-        "value": 3000,
-        "description": "3,000 Reward Points on ₹3 lakh spend & 1,500 for every additional ₹1 lakh spend (up to 15,000 reward points per year)"
-      },
-      {
-        "category": "Insurance",
-        "type": "reward_points",
-        "value": 200000,
-        "description": "Personal Accident Insurance Cover of ₹2 lakh (Rupay Variant)"
       },
       {
         "category": "Travel",
@@ -317,7 +293,29 @@
     },
     "link": "https://www.icici.bank.in/personal-banking/cards/credit-card/rubyx-credit-card",
     "updatedAt": "2026-03-04",
-    "dataSource": "scraped"
+    "dataSource": "scraped",
+    "perks": [
+      {
+        "category": "Online Shopping",
+        "title": "Welcome Vouchers worth over ₹5",
+        "description": "Welcome Vouchers worth over ₹5,000 from Tata CLiQ, Tata Croma, EazyDiner, EaseMyTrip and more"
+      },
+      {
+        "category": "Insurance",
+        "title": "Air Accident Insurance cover up to ₹1 crore",
+        "description": "Air Accident Insurance cover up to ₹1 crore"
+      },
+      {
+        "category": "General",
+        "title": "3",
+        "description": "3,000 Reward Points on ₹3 lakh spend & 1,500 for every additional ₹1 lakh spend (up to 15,000 reward points per year)"
+      },
+      {
+        "category": "Insurance",
+        "title": "Personal Accident Insurance Cover of ₹2 lakh (R...",
+        "description": "Personal Accident Insurance Cover of ₹2 lakh (Rupay Variant)"
+      }
+    ]
   },
   {
     "name": "Times Black ICICI Bank Credit Card",
@@ -471,52 +469,10 @@
         "description": "1 reward point per ₹100 on utility and insurance spend"
       },
       {
-        "category": "Travel",
-        "type": "other",
-        "value": 0,
-        "description": "Unlimited international and domestic airport lounge access for primary cardholder"
-      },
-      {
-        "category": "Entertainment",
-        "type": "other",
-        "value": 0,
-        "description": "Up to 4 complimentary golf rounds per month based on eligible spends"
-      },
-      {
-        "category": "Entertainment",
-        "type": "cashback",
-        "value": 0,
-        "description": "Buy One Get One Free on BookMyShow tickets, up to ₹750, four times a month"
-      },
-      {
-        "category": "Shopping",
-        "type": "cashback",
-        "value": 0,
-        "description": "Birthday shopping voucher from TATA CLiQ worth ₹5,000 (for American Express Cardholders)"
-      },
-      {
-        "category": "Travel",
-        "type": "other",
-        "value": 0,
-        "description": "No cancellation charges on domestic flight and hotel bookings, up to ₹12,000 (twice yearly)"
-      },
-      {
         "category": "Fuel",
         "type": "cashback",
         "value": 1,
         "description": "1% fuel surcharge waiver on all fuel stations"
-      },
-      {
-        "category": "General",
-        "type": "other",
-        "value": 0,
-        "description": "24x7 Concierge Service"
-      },
-      {
-        "category": "Insurance",
-        "type": "other",
-        "value": 0,
-        "description": "Air Accident Insurance cover up to ₹3 crore"
       }
     ],
     "feesAndCharges": {
@@ -548,7 +504,44 @@
     },
     "link": "https://www.icici.bank.in/personal-banking/cards/credit-card/emeralde-credit-card",
     "updatedAt": "2026-03-04",
-    "dataSource": "scraped"
+    "dataSource": "scraped",
+    "perks": [
+      {
+        "category": "Travel",
+        "title": "Unlimited international and domestic airport lo...",
+        "description": "Unlimited international and domestic airport lounge access for primary cardholder"
+      },
+      {
+        "category": "Entertainment",
+        "title": "Up to 4 complimentary golf rounds per month bas...",
+        "description": "Up to 4 complimentary golf rounds per month based on eligible spends"
+      },
+      {
+        "category": "Entertainment",
+        "title": "Buy One Get One Free on BookMyShow tickets",
+        "description": "Buy One Get One Free on BookMyShow tickets, up to ₹750, four times a month"
+      },
+      {
+        "category": "Shopping",
+        "title": "Birthday shopping voucher from TATA CLiQ worth ₹5",
+        "description": "Birthday shopping voucher from TATA CLiQ worth ₹5,000 (for American Express Cardholders)"
+      },
+      {
+        "category": "Travel",
+        "title": "No cancellation charges on domestic flight and ...",
+        "description": "No cancellation charges on domestic flight and hotel bookings, up to ₹12,000 (twice yearly)"
+      },
+      {
+        "category": "General",
+        "title": "24x7 Concierge Service",
+        "description": "24x7 Concierge Service"
+      },
+      {
+        "category": "Insurance",
+        "title": "Air Accident Insurance cover up to ₹3 crore",
+        "description": "Air Accident Insurance cover up to ₹3 crore"
+      }
+    ]
   },
   {
     "name": "Adani One ICICI Bank Signature Credit Card",
@@ -556,24 +549,6 @@
     "cardType": "cobrand",
     "description": "A co-branded credit card offering exclusive airport experiences, Adani One rewards, and entertainment benefits.",
     "benefits": [
-      {
-        "category": "Travel",
-        "type": "cashback",
-        "value": 5000,
-        "description": "Flight vouchers worth ₹5,000 on spends of ₹25,000 within 60 days of card activation."
-      },
-      {
-        "category": "Travel",
-        "type": "cashback",
-        "value": 2000,
-        "description": "Exclusive Hotel vouchers worth ₹2,000."
-      },
-      {
-        "category": "Entertainment",
-        "type": "cashback",
-        "value": 500,
-        "description": "Buy one get one free (up to ₹500 off on second ticket) on BookMyShow, twice a month."
-      },
       {
         "category": "Fuel",
         "type": "cashback",
@@ -597,48 +572,6 @@
         "type": "reward_points",
         "value": 1.5,
         "description": "1.5 reward points per ₹100 spent on Domestic transactions."
-      },
-      {
-        "category": "Travel",
-        "type": "cashback",
-        "value": 0,
-        "description": "2 complimentary Pranaam services annually (1 on activation, 1 on ₹3 lakh spends)."
-      },
-      {
-        "category": "Travel",
-        "type": "cashback",
-        "value": 0,
-        "description": "16 complimentary Premium Lounge upgrades annually."
-      },
-      {
-        "category": "Travel",
-        "type": "cashback",
-        "value": 0,
-        "description": "4 complimentary valet parking services annually."
-      },
-      {
-        "category": "Travel",
-        "type": "cashback",
-        "value": 0,
-        "description": "4 complimentary premium car parking services on card activation annually."
-      },
-      {
-        "category": "Travel",
-        "type": "cashback",
-        "value": 0,
-        "description": "2 porter services for every ₹1 lakh spent, up to 8 annually."
-      },
-      {
-        "category": "Travel",
-        "type": "cashback",
-        "value": 0,
-        "description": "2 complimentary international airport lounge access annually."
-      },
-      {
-        "category": "Travel",
-        "type": "cashback",
-        "value": 0,
-        "description": "4 complimentary domestic airport lounge access quarterly."
       }
     ],
     "feesAndCharges": {
@@ -668,7 +601,59 @@
     },
     "link": "https://www.icici.bank.in/personal-banking/cards/credit-card/adani-icici-credit-card/signature-credit-card",
     "updatedAt": "2026-03-04",
-    "dataSource": "scraped"
+    "dataSource": "scraped",
+    "perks": [
+      {
+        "category": "Travel",
+        "title": "Flight vouchers worth ₹5",
+        "description": "Flight vouchers worth ₹5,000 on spends of ₹25,000 within 60 days of card activation."
+      },
+      {
+        "category": "Travel",
+        "title": "Exclusive Hotel vouchers worth ₹2",
+        "description": "Exclusive Hotel vouchers worth ₹2,000."
+      },
+      {
+        "category": "Entertainment",
+        "title": "Buy one get one free (up to ₹500 off on second ...",
+        "description": "Buy one get one free (up to ₹500 off on second ticket) on BookMyShow, twice a month."
+      },
+      {
+        "category": "Travel",
+        "title": "2 complimentary Pranaam services annually (1 on...",
+        "description": "2 complimentary Pranaam services annually (1 on activation, 1 on ₹3 lakh spends)."
+      },
+      {
+        "category": "Travel",
+        "title": "16 complimentary Premium Lounge upgrades annually",
+        "description": "16 complimentary Premium Lounge upgrades annually."
+      },
+      {
+        "category": "Travel",
+        "title": "4 complimentary valet parking services annually",
+        "description": "4 complimentary valet parking services annually."
+      },
+      {
+        "category": "Travel",
+        "title": "4 complimentary premium car parking services on...",
+        "description": "4 complimentary premium car parking services on card activation annually."
+      },
+      {
+        "category": "Travel",
+        "title": "2 porter services for every ₹1 lakh spent",
+        "description": "2 porter services for every ₹1 lakh spent, up to 8 annually."
+      },
+      {
+        "category": "Travel",
+        "title": "2 complimentary international airport lounge ac...",
+        "description": "2 complimentary international airport lounge access annually."
+      },
+      {
+        "category": "Travel",
+        "title": "4 complimentary domestic airport lounge access ...",
+        "description": "4 complimentary domestic airport lounge access quarterly."
+      }
+    ]
   },
   {
     "name": "Adani One ICICI Bank Platinum Credit Card",
@@ -720,12 +705,6 @@
       },
       {
         "category": "Travel",
-        "type": "cashback",
-        "value": 2000,
-        "description": "Up to 4 Porter services worth ₹2000 for ₹1 lakh annual spend"
-      },
-      {
-        "category": "Travel",
         "type": "reward_points",
         "value": 1,
         "description": "Flight vouchers on ₹10,000 spend within 60 days of card activation"
@@ -771,7 +750,14 @@
     },
     "link": "https://www.icici.bank.in/personal-banking/cards/credit-card/adani-icici-credit-card/platinum-card",
     "updatedAt": "2026-03-04",
-    "dataSource": "scraped"
+    "dataSource": "scraped",
+    "perks": [
+      {
+        "category": "Travel",
+        "title": "Up to 4 Porter services worth ₹2000 for ₹1 lakh...",
+        "description": "Up to 4 Porter services worth ₹2000 for ₹1 lakh annual spend"
+      }
+    ]
   },
   {
     "name": "MakeMyTrip ICICI Bank Credit Card",
@@ -834,24 +820,6 @@
     "description": "High-end flying perks with Skywards miles and exclusive benefits.",
     "benefits": [
       {
-        "category": "General",
-        "type": "reward_points",
-        "value": 10000,
-        "description": "10,000 Skywards Miles as a joining benefit"
-      },
-      {
-        "category": "General",
-        "type": "reward_points",
-        "value": 10000,
-        "description": "10,000 Skywards Miles on annual renewal"
-      },
-      {
-        "category": "Entertainment",
-        "type": "cashback",
-        "value": 750,
-        "description": "Buy one get one free on movie tickets via BookMyShow, up to ₹750 off, four times a month"
-      },
-      {
         "category": "Fuel",
         "type": "cashback",
         "value": 1,
@@ -899,7 +867,24 @@
     },
     "link": "https://www.icici.bank.in/personal-banking/cards/credit-card/emirates-skywards/emirates-emeralde",
     "updatedAt": "2026-03-04",
-    "dataSource": "scraped"
+    "dataSource": "scraped",
+    "perks": [
+      {
+        "category": "General",
+        "title": "10",
+        "description": "10,000 Skywards Miles as a joining benefit"
+      },
+      {
+        "category": "General",
+        "title": "10",
+        "description": "10,000 Skywards Miles on annual renewal"
+      },
+      {
+        "category": "Entertainment",
+        "title": "Buy one get one free on movie tickets via BookM...",
+        "description": "Buy one get one free on movie tickets via BookMyShow, up to ₹750 off, four times a month"
+      }
+    ]
   },
   {
     "name": "HPCL Coral Credit Card",

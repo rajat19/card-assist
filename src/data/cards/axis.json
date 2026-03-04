@@ -172,24 +172,6 @@
       {
         "category": "Travel",
         "type": "reward_points",
-        "value": 5000,
-        "description": "Welcome bonus of IndiGo BluChips and one complimentary 6E Eats voucher on payment of joining fee"
-      },
-      {
-        "category": "Travel",
-        "type": "reward_points",
-        "value": 5000,
-        "description": "Annual renewal benefit of IndiGo BluChips and one complimentary 6E Eats voucher on payment of annual fee"
-      },
-      {
-        "category": "General",
-        "type": "reward_points",
-        "value": 5000,
-        "description": "Earn 5000 IndiGo BluChips vouchers at spend milestones of ₹2 Lakhs, ₹5 Lakhs, ₹8 Lakhs, and ₹12 Lakhs (total up to 20,000 BluChips)"
-      },
-      {
-        "category": "Travel",
-        "type": "reward_points",
         "value": 7,
         "description": "Earn 7 IndiGo BluChips on every ₹100 spent on all IndiGo channels"
       },
@@ -227,7 +209,24 @@
     },
     "link": "https://www.axis.bank.in/cards/credit-card/indigo-axis-bank-premium-credit-card",
     "updatedAt": "2026-03-01",
-    "dataSource": "scraped"
+    "dataSource": "scraped",
+    "perks": [
+      {
+        "category": "Travel",
+        "title": "Welcome bonus of IndiGo BluChips and one compli...",
+        "description": "Welcome bonus of IndiGo BluChips and one complimentary 6E Eats voucher on payment of joining fee"
+      },
+      {
+        "category": "Travel",
+        "title": "Annual renewal benefit of IndiGo BluChips and o...",
+        "description": "Annual renewal benefit of IndiGo BluChips and one complimentary 6E Eats voucher on payment of annual fee"
+      },
+      {
+        "category": "General",
+        "title": "Earn 5000 IndiGo BluChips vouchers at spend mil...",
+        "description": "Earn 5000 IndiGo BluChips vouchers at spend milestones of ₹2 Lakhs, ₹5 Lakhs, ₹8 Lakhs, and ₹12 Lakhs (total up to 20,000 BluChips)"
+      }
+    ]
   },
   {
     "name": "IndianOil Axis Bank Credit Card",
@@ -464,24 +463,6 @@
       },
       {
         "category": "Travel",
-        "type": "voucher",
-        "value": 12500,
-        "description": "Welcome benefit: Choose one voucher worth ₹12,500 (Luxe, Postcard Hotels, or Yatra gift voucher)"
-      },
-      {
-        "category": "Travel",
-        "type": "other",
-        "value": 0,
-        "description": "Unlimited complimentary international lounge visits with Priority Pass, plus 4 additional guest visits per year"
-      },
-      {
-        "category": "Travel",
-        "type": "other",
-        "value": 0,
-        "description": "Unlimited visits to select airport lounges in India"
-      },
-      {
-        "category": "Travel",
         "type": "discount",
         "value": 15,
         "description": "Up to 15% off on international & domestic Oberoi & Trident Hotels"
@@ -491,12 +472,6 @@
         "type": "discount",
         "value": 30,
         "description": "Up to 30% discount at over 4,000 restaurants across India"
-      },
-      {
-        "category": "General",
-        "type": "other",
-        "value": 0,
-        "description": "Insurance benefits including purchase protection and lost card liability programs"
       }
     ],
     "feesAndCharges": {
@@ -527,7 +502,29 @@
     },
     "link": "https://www.axis.bank.in/cards/credit-card/axis-bank-magnus-credit-card",
     "updatedAt": "2026-03-02",
-    "dataSource": "scraped"
+    "dataSource": "scraped",
+    "perks": [
+      {
+        "category": "Travel",
+        "title": "Welcome benefit: Choose one voucher worth ₹12",
+        "description": "Welcome benefit: Choose one voucher worth ₹12,500 (Luxe, Postcard Hotels, or Yatra gift voucher)"
+      },
+      {
+        "category": "Travel",
+        "title": "Unlimited complimentary international lounge vi...",
+        "description": "Unlimited complimentary international lounge visits with Priority Pass, plus 4 additional guest visits per year"
+      },
+      {
+        "category": "Travel",
+        "title": "Unlimited visits to select airport lounges in I...",
+        "description": "Unlimited visits to select airport lounges in India"
+      },
+      {
+        "category": "General",
+        "title": "Insurance benefits including purchase protectio...",
+        "description": "Insurance benefits including purchase protection and lost card liability programs"
+      }
+    ]
   },
   {
     "name": "Axis Bank Atlas Credit Card",
@@ -582,51 +579,9 @@
     "benefits": [
       {
         "category": "Travel",
-        "type": "reward_points",
-        "value": 0,
-        "description": "Complimentary airport concierge services"
-      },
-      {
-        "category": "Travel",
-        "type": "reward_points",
-        "value": 0,
-        "description": "Complimentary Priority Pass membership with unlimited visits and unlimited domestic lounge visits"
-      },
-      {
-        "category": "Travel",
-        "type": "reward_points",
-        "value": 0,
-        "description": "Club ITC Culinaire, Accorplus, and Club Marriott Asia Pacific memberships"
-      },
-      {
-        "category": "Travel",
         "type": "cashback",
         "value": 15,
         "description": "15% savings at Postcard Hotel"
-      },
-      {
-        "category": "Dining",
-        "type": "reward_points",
-        "value": 0,
-        "description": "Complimentary EazyDiner Prime membership"
-      },
-      {
-        "category": "Dining",
-        "type": "reward_points",
-        "value": 0,
-        "description": "Complimentary Swiggy One Membership"
-      },
-      {
-        "category": "Entertainment",
-        "type": "reward_points",
-        "value": 0,
-        "description": "Complimentary tickets on BookMyShow"
-      },
-      {
-        "category": "Lifestyle",
-        "type": "reward_points",
-        "value": 0,
-        "description": "Complimentary golf rounds"
       },
       {
         "category": "General",
@@ -664,7 +619,44 @@
     },
     "link": "https://www.axis.bank.in/cards/credit-card/reserve-credit-card",
     "updatedAt": "2026-03-02",
-    "dataSource": "scraped"
+    "dataSource": "scraped",
+    "perks": [
+      {
+        "category": "Travel",
+        "title": "Complimentary airport concierge services",
+        "description": "Complimentary airport concierge services"
+      },
+      {
+        "category": "Travel",
+        "title": "Complimentary Priority Pass membership with unl...",
+        "description": "Complimentary Priority Pass membership with unlimited visits and unlimited domestic lounge visits"
+      },
+      {
+        "category": "Travel",
+        "title": "Club ITC Culinaire",
+        "description": "Club ITC Culinaire, Accorplus, and Club Marriott Asia Pacific memberships"
+      },
+      {
+        "category": "Dining",
+        "title": "Complimentary EazyDiner Prime membership",
+        "description": "Complimentary EazyDiner Prime membership"
+      },
+      {
+        "category": "Dining",
+        "title": "Complimentary Swiggy One Membership",
+        "description": "Complimentary Swiggy One Membership"
+      },
+      {
+        "category": "Entertainment",
+        "title": "Complimentary tickets on BookMyShow",
+        "description": "Complimentary tickets on BookMyShow"
+      },
+      {
+        "category": "Lifestyle",
+        "title": "Complimentary golf rounds",
+        "description": "Complimentary golf rounds"
+      }
+    ]
   },
   {
     "name": "REWARDS Credit Card",
@@ -679,34 +671,10 @@
         "description": "2 EDGE REWARD Points on every ₹125 spend (0.32% equivalent, based on 1 EDGE REWARD Point = ₹0.20)"
       },
       {
-        "category": "General",
-        "type": "reward_points",
-        "value": 0,
-        "description": "5,000 EDGE REWARD Points (worth ₹1000) on cumulative net spends of ₹1,000 or above within 30 days of card issuance"
-      },
-      {
-        "category": "General",
-        "type": "reward_points",
-        "value": 0,
-        "description": "1,500 EDGE REWARD points (worth ₹300) on net spends of ₹30,000 per statement cycle as a milestone benefit"
-      },
-      {
         "category": "Dining",
         "type": "cashback",
         "value": 30,
         "description": "₹150 instant discount on Swiggy on a minimum Transaction value of ₹500 (30% discount)"
-      },
-      {
-        "category": "Travel",
-        "type": "cashback",
-        "value": 0,
-        "description": "2 complimentary domestic lounge access per quarter (estimated annual value ₹12,000)"
-      },
-      {
-        "category": "General",
-        "type": "cashback",
-        "value": 0,
-        "description": "Bouquet of memberships up to ₹1,000 every anniversary year"
       }
     ],
     "feesAndCharges": {
@@ -738,6 +706,28 @@
     },
     "link": "https://www.axis.bank.in/cards/credit-card/rewards-credit-card",
     "updatedAt": "2026-03-02",
-    "dataSource": "scraped"
+    "dataSource": "scraped",
+    "perks": [
+      {
+        "category": "General",
+        "title": "5",
+        "description": "5,000 EDGE REWARD Points (worth ₹1000) on cumulative net spends of ₹1,000 or above within 30 days of card issuance"
+      },
+      {
+        "category": "General",
+        "title": "1",
+        "description": "1,500 EDGE REWARD points (worth ₹300) on net spends of ₹30,000 per statement cycle as a milestone benefit"
+      },
+      {
+        "category": "Travel",
+        "title": "2 complimentary domestic lounge access per quar...",
+        "description": "2 complimentary domestic lounge access per quarter (estimated annual value ₹12,000)"
+      },
+      {
+        "category": "General",
+        "title": "Bouquet of memberships up to ₹1",
+        "description": "Bouquet of memberships up to ₹1,000 every anniversary year"
+      }
+    ]
   }
 ]

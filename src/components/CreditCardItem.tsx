@@ -1,9 +1,11 @@
+import { useState } from 'react';
 import { Benefit, BenefitType, CardType, CreditCard } from '@/types/creditcard';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { CreditCard as CardIcon, ExternalLink, Sparkles, Trophy } from 'lucide-react';
+import { CreditCard as CardIcon, ExternalLink, Sparkles, Trophy, ChevronDown, ChevronUp } from 'lucide-react';
 import { getBankIcon, getBankColor } from '@/data/bankIcons';
 import BenefitPill from '@/components/BenefitPill';
+import PerkItem from '@/components/PerkItem';
 
 interface CreditCardItemProps {
   card: CreditCard;
@@ -11,7 +13,10 @@ interface CreditCardItemProps {
   aiReason?: string;
 }
 
+const VISIBLE_COUNT = 4;
+
 const CreditCardItem = ({ card, rank, aiReason }: CreditCardItemProps) => {
+  const [expanded, setExpanded] = useState(false);
   const getCardTypeColor = (type: CardType) => {
     switch (type) {
       case CardType.PREMIUM: return 'bg-gradient-financial text-white';
@@ -31,21 +36,6 @@ const CreditCardItem = ({ card, rank, aiReason }: CreditCardItemProps) => {
 
   const bankIcon = getBankIcon(card.bankName);
   const bankColor = getBankColor(card.bankName);
-
-  const getBenefit = (benefit: Benefit) => {
-    switch (benefit.type) {
-      case BenefitType.CASHBACK: return `₹${benefit.value}% cashback on ${benefit.category}`;
-      case BenefitType.REWARD_POINTS: return `${benefit.value}% RP on ${benefit.category}`;
-      case BenefitType.MILES: return `${benefit.value}% miles on ${benefit.category}`;
-      case BenefitType.DISCOUNT: return `${benefit.value}% discount on ${benefit.category}`;
-      case BenefitType.WAIVER: return `${benefit.value}% waiver on ${benefit.category}`;
-      case BenefitType.REBATE: return `${benefit.value}% rebate on ${benefit.category}`;
-      case BenefitType.REIMBURSEMENT: return `${benefit.value}% reimbursement on ${benefit.category}`;
-      case BenefitType.VOUCHER: return `${benefit.value}% voucher on ${benefit.category}`;
-      case BenefitType.FIXED: return `${benefit.value}% fixed on ${benefit.category}`;
-      default: return `${benefit.value}% on ${benefit.category}`;
-    }
-  };
 
   return (
     <a
@@ -135,16 +125,52 @@ const CreditCardItem = ({ card, rank, aiReason }: CreditCardItemProps) => {
 
           <div className="space-y-2 flex-1 min-h-0 flex flex-col">
             <h4 className="text-sm font-medium text-card-foreground shrink-0">Key Benefits</h4>
-            <div className="flex flex-wrap gap-1.5 overflow-y-auto max-h-24">
-              {card.benefits.map((benefit, index) => (
+            <div className="flex flex-wrap gap-1.5">
+              {card.benefits.slice(0, expanded ? undefined : VISIBLE_COUNT).map((benefit, index) => (
                 <BenefitPill
                   key={index}
                   benefit={benefit}
                   accentColor={bankColor.accent}
                 />
               ))}
+              {card.benefits.length > VISIBLE_COUNT && (
+                <button
+                  onClick={(e) => { e.preventDefault(); e.stopPropagation(); setExpanded(!expanded); }}
+                  className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium
+                             bg-background/80 border border-border/50 text-muted-foreground
+                             hover:bg-background hover:text-foreground hover:border-border
+                             transition-colors cursor-pointer"
+                >
+                  {expanded ? (
+                    <><ChevronUp className="h-3 w-3" /> less</>
+                  ) : (
+                    <><ChevronDown className="h-3 w-3" /> +{card.benefits.length - VISIBLE_COUNT} more</>
+                  )}
+                </button>
+              )}
             </div>
           </div>
+
+          {/* Perks section */}
+          {card.perks && card.perks.length > 0 && (
+            <div className="space-y-1.5">
+              <h4 className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Perks</h4>
+              <div className="space-y-1">
+                {card.perks.slice(0, expanded ? undefined : 2).map((perk, index) => (
+                  <PerkItem key={index} perk={perk} accentColor={bankColor.accent} />
+                ))}
+                {card.perks.length > 2 && !expanded && (
+                  <button
+                    onClick={(e) => { e.preventDefault(); e.stopPropagation(); setExpanded(true); }}
+                    className="text-xs text-muted-foreground hover:text-foreground transition-colors cursor-pointer flex items-center gap-1"
+                  >
+                    <ChevronDown className="h-3 w-3" />
+                    +{card.perks.length - 2} more perks
+                  </button>
+                )}
+              </div>
+            </div>
+          )}
         </CardContent>
       </Card>
     </a>

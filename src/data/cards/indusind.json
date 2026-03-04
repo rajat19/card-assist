@@ -1,53 +1,53 @@
 [
-    {
-        "name": "IndusInd Legend Credit Card",
-        "bankName": "IndusInd Bank",
-        "cardType": "regular",
-        "description": "Premium lifestyle card with dining and travel privileges",
-        "benefits": [
-            {
-                "category": "Dining",
-                "type": "reward_points",
-                "value": 2
-            },
-            {
-                "category": "Travel",
-                "type": "reward_points",
-                "value": 2
-            },
-            {
-                "category": "General",
-                "type": "reward_points",
-                "value": 1
-            }
-        ],
-        "feesAndCharges": {
-            "annual": {
-                "value": 0,
-                "type": "fixed",
-                "description": "No annual; one-time joining fee (confirm)"
-            },
-            "joining": {
-                "value": 9999,
-                "type": "fixed"
-            },
-            "cashWithdrawal": {
-                "value": 2.5,
-                "type": "percentage",
-                "description": "2.5% (Min. ₹300)"
-            },
-            "forex": {
-                "value": 3.5,
-                "type": "percentage"
-            },
-            "fuelTransaction": {
-                "value": 1,
-                "type": "percentage",
-                "description": "1% surcharge waiver (caps apply)"
-            }
-        },
-        "link": "https://www.indusind.com/in/en/personal/cards/credit-card/legend-credit-card.html",
-        "updatedAt": "2025-09-06",
-        "dataSource": "manual"
-    }
+  {
+    "name": "IndusInd Legend Credit Card",
+    "bankName": "IndusInd Bank",
+    "cardType": "regular",
+    "description": "Premium lifestyle card with dining and travel privileges",
+    "benefits": [
+      {
+        "category": "Dining",
+        "type": "reward_points",
+        "value": 2
+      },
+      {
+        "category": "Travel",
+        "type": "reward_points",
+        "value": 2
+      },
+      {
+        "category": "General",
+        "type": "reward_points",
+        "value": 1
+      }
+    ],
+    "feesAndCharges": {
+      "annual": {
+        "value": 0,
+        "type": "fixed",
+        "description": "No annual; one-time joining fee (confirm)"
+      },
+      "joining": {
+        "value": 9999,
+        "type": "fixed"
+      },
+      "cashWithdrawal": {
+        "value": 2.5,
+        "type": "percentage",
+        "description": "2.5% (Min. ₹300)"
+      },
+      "forex": {
+        "value": 3.5,
+        "type": "percentage"
+      },
+      "fuelTransaction": {
+        "value": 1,
+        "type": "percentage",
+        "description": "1% surcharge waiver (caps apply)"
+      }
+    },
+    "link": "https://www.indusind.com/in/en/personal/cards/credit-card/legend-credit-card.html",
+    "updatedAt": "2025-09-06",
+    "dataSource": "manual"
+  }
 ]

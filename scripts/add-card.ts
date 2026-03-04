@@ -43,6 +43,11 @@ interface CardJson {
         value: number;
         description?: string;
     }[];
+    perks?: {
+        category: string;
+        title: string;
+        description?: string;
+    }[];
     feesAndCharges: {
         annual: { value: number; type: string; description?: string };
         joining: { value: number; type: string; description?: string };
@@ -129,6 +134,13 @@ REQUIRED JSON structure:
       "type": "cashback" | "reward_points" | "miles" | "discount" | "waiver" | "rebate" | "reimbursement" | "voucher" | "fixed",
       "value": <number: percentage value or multiplier>,
       "description": "Optional detail about the benefit"
+    }
+  ],
+  "perks": [
+    {
+      "category": "Category (e.g. Travel, Entertainment, Insurance, Dining, Lifestyle, General)",
+      "title": "Short title (e.g. Priority Pass Lounge Access, BookMyShow BOGO)",
+      "description": "Full description of the perk"
     }
   ],
   "feesAndCharges": {

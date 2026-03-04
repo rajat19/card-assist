@@ -1,54 +1,54 @@
 [
-    {
-        "name": "RBL Bank ShopRite Credit Card",
-        "bankName": "RBL Bank",
-        "cardType": "regular",
-        "description": "Value card with grocery benefits and fuel surcharge waiver",
-        "benefits": [
-            {
-                "category": "Groceries",
-                "type": "cashback",
-                "value": 5,
-                "description": "Cashback on groceries"
-            },
-            {
-                "category": "Fuel",
-                "type": "cashback",
-                "value": 1,
-                "description": "Fuel surcharge waiver benefits"
-            },
-            {
-                "category": "General",
-                "type": "cashback",
-                "value": 1
-            }
-        ],
-        "feesAndCharges": {
-            "annual": {
-                "value": 500,
-                "type": "fixed"
-            },
-            "joining": {
-                "value": 500,
-                "type": "fixed"
-            },
-            "cashWithdrawal": {
-                "value": 2.5,
-                "type": "percentage",
-                "description": "2.5% (Min. ₹500)"
-            },
-            "forex": {
-                "value": 3.5,
-                "type": "percentage"
-            },
-            "fuelTransaction": {
-                "value": 1,
-                "type": "percentage",
-                "description": "1% surcharge waiver"
-            }
-        },
-        "link": "https://www.rblbank.com/personal-banking/cards/credit-cards/shoprite-credit-card",
-        "updatedAt": "2025-09-06",
-        "dataSource": "manual"
-    }
+  {
+    "name": "RBL Bank ShopRite Credit Card",
+    "bankName": "RBL Bank",
+    "cardType": "regular",
+    "description": "Value card with grocery benefits and fuel surcharge waiver",
+    "benefits": [
+      {
+        "category": "Groceries",
+        "type": "cashback",
+        "value": 5,
+        "description": "Cashback on groceries"
+      },
+      {
+        "category": "Fuel",
+        "type": "cashback",
+        "value": 1,
+        "description": "Fuel surcharge waiver benefits"
+      },
+      {
+        "category": "General",
+        "type": "cashback",
+        "value": 1
+      }
+    ],
+    "feesAndCharges": {
+      "annual": {
+        "value": 500,
+        "type": "fixed"
+      },
+      "joining": {
+        "value": 500,
+        "type": "fixed"
+      },
+      "cashWithdrawal": {
+        "value": 2.5,
+        "type": "percentage",
+        "description": "2.5% (Min. ₹500)"
+      },
+      "forex": {
+        "value": 3.5,
+        "type": "percentage"
+      },
+      "fuelTransaction": {
+        "value": 1,
+        "type": "percentage",
+        "description": "1% surcharge waiver"
+      }
+    },
+    "link": "https://www.rblbank.com/personal-banking/cards/credit-cards/shoprite-credit-card",
+    "updatedAt": "2025-09-06",
+    "dataSource": "manual"
+  }
 ]

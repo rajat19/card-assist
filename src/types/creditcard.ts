@@ -41,6 +41,12 @@ export interface Benefit {
   conditions?: string;
 }
 
+export interface Perk {
+  category: string;
+  title: string;
+  description?: string;
+}
+
 export interface FeeItem {
   value: number;
   type: 'fixed' | 'percentage';
@@ -73,6 +79,7 @@ export interface CreditCard {
   name: string;
   bankName: Bank;
   benefits: Benefit[];
+  perks?: Perk[];
   feesAndCharges: FeesAndCharges;
   description?: string;
   cardType: CardType;
