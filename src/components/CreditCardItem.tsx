@@ -2,10 +2,13 @@ import { useState } from 'react';
 import { Benefit, BenefitType, CardType, CreditCard } from '@/types/creditcard';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { CreditCard as CardIcon, ExternalLink, Sparkles, Trophy, ChevronDown, ChevronUp } from 'lucide-react';
+import { CreditCard as CardIcon, ExternalLink, Sparkles, Trophy, ChevronDown, ChevronUp, Scale } from 'lucide-react';
 import { getBankIcon, getBankColor } from '@/data/bankIcons';
+import { useCompare } from '@/contexts/CompareContext';
 import BenefitPill from '@/components/BenefitPill';
 import PerkItem from '@/components/PerkItem';
+import { CardDetailsSheet } from '@/components/CardDetailsSheet';
+import { Button } from '@/components/ui/button';
 
 interface CreditCardItemProps {
   card: CreditCard;
@@ -17,6 +20,8 @@ const VISIBLE_COUNT = 4;
 
 const CreditCardItem = ({ card, rank, aiReason }: CreditCardItemProps) => {
   const [expanded, setExpanded] = useState(false);
+  const [sheetOpen, setSheetOpen] = useState(false);
+  const { toggleCardToCompare, isComparing, canAddMore } = useCompare();
   const getCardTypeColor = (type: CardType) => {
     switch (type) {
       case CardType.PREMIUM: return 'bg-gradient-financial text-white';
@@ -38,142 +43,175 @@ const CreditCardItem = ({ card, rank, aiReason }: CreditCardItemProps) => {
   const bankColor = getBankColor(card.bankName);
 
   return (
-    <a
-      href={card.link}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="block no-underline group h-full"
-    >
-      <Card
-        className="relative overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 border-0 cursor-pointer
-                   hover:scale-[1.02] hover:-translate-y-1 h-full flex flex-col"
-        style={{ background: bankColor.bg }}
+    <>
+      <div
+        onClick={() => setSheetOpen(true)}
+        className="block no-underline group h-full cursor-pointer"
       >
-        {/* Bank-colored left accent strip */}
-        <div
-          className="absolute left-0 top-0 bottom-0 w-1 transition-all duration-300 group-hover:w-1.5"
-          style={{ background: bankColor.border }}
-        />
-
-        {/* Rank badge */}
-        {rank != null && (
+        <Card
+          className="relative overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 border-0 cursor-pointer
+                   hover:scale-[1.02] hover:-translate-y-1 h-full flex flex-col"
+          style={{ background: bankColor.bg }}
+        >
+          {/* Bank-colored left accent strip */}
           <div
-            className="absolute top-3 right-3 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold shadow-lg z-10"
-            style={getRankStyle(rank)}
-          >
-            {rank <= 3 ? <Trophy className="h-4 w-4" /> : `#${rank}`}
-          </div>
-        )}
+            className="absolute left-0 top-0 bottom-0 w-1 transition-all duration-300 group-hover:w-1.5"
+            style={{ background: bankColor.border }}
+          />
 
-        <CardHeader className="pb-3 pl-5">
-          <div className="flex items-start justify-between pr-8">
-            <div className="flex items-center gap-3">
-              <div
-                className="p-2 rounded-lg border"
-                style={{ borderColor: `${bankColor.accent}33`, background: `${bankColor.bg}` }}
-              >
-                {bankIcon ? (
-                  <img src={bankIcon} alt={card.bankName} className="h-5 w-5 object-contain" />
-                ) : (
-                  <CardIcon className="h-5 w-5" style={{ color: bankColor.accent }} />
-                )}
-              </div>
-              <div>
-                <CardTitle className="text-lg text-card-foreground group-hover:text-financial-blue transition-colors flex items-center gap-1.5">
-                  {card.name}
-                  <ExternalLink className="h-3.5 w-3.5 opacity-0 group-hover:opacity-60 transition-opacity" />
-                </CardTitle>
-                <p className="text-sm text-muted-foreground">{card.bankName}</p>
-              </div>
-            </div>
-            <Badge className={`${getCardTypeColor(card.cardType)} capitalize font-medium shrink-0`}>
-              {card.cardType}
-            </Badge>
-          </div>
-        </CardHeader>
-
-        <CardContent className="space-y-4 pl-5 flex-1 flex flex-col min-h-0">
-          {/* AI Reason callout — search results only */}
-          {aiReason && (
+          {/* Rank badge */}
+          {rank != null && (
             <div
-              className="flex items-start gap-2 p-2.5 rounded-lg text-sm"
-              style={{ background: `${bankColor.bg}`, borderLeft: `3px solid ${bankColor.accent}` }}
+              className="absolute top-3 right-3 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold shadow-lg z-10"
+              style={getRankStyle(rank)}
             >
-              <Sparkles className="h-4 w-4 shrink-0 mt-0.5" style={{ color: bankColor.accent }} />
-              <span className="text-card-foreground/80 leading-snug">{aiReason}</span>
+              {rank <= 3 ? <Trophy className="h-4 w-4" /> : `#${rank}`}
             </div>
           )}
 
-          {card.description && (
-            <p className="text-sm text-muted-foreground line-clamp-2">{card.description}</p>
-          )}
-
-          <div className="grid grid-cols-2 gap-2 text-sm">
-            <div className="flex flex-col p-2 rounded-lg bg-background/60">
-              <span className="text-xs text-muted-foreground">Joining Fee</span>
-              <span className="font-semibold text-card-foreground">
-                {card.feesAndCharges.joining.type === 'fixed' ? `₹${card.feesAndCharges.joining.value.toLocaleString('en-IN')}` : `${card.feesAndCharges.joining.value}%`}
-              </span>
+          <CardHeader className="pb-3 pl-5">
+            <div className="flex items-start justify-between pr-8">
+              <div className="flex items-center gap-3">
+                <div
+                  className="p-2 rounded-lg border"
+                  style={{ borderColor: `${bankColor.accent}33`, background: `${bankColor.bg}` }}
+                >
+                  {bankIcon ? (
+                    <img src={bankIcon} alt={card.bankName} className="h-5 w-5 object-contain" />
+                  ) : (
+                    <CardIcon className="h-5 w-5" style={{ color: bankColor.accent }} />
+                  )}
+                </div>
+                <div>
+                  <CardTitle className="text-lg text-card-foreground group-hover:text-financial-blue transition-colors flex items-center gap-1.5">
+                    {card.name}
+                    <ExternalLink className="h-3.5 w-3.5 opacity-0 group-hover:opacity-60 transition-opacity" />
+                  </CardTitle>
+                  <p className="text-sm text-muted-foreground">{card.bankName}</p>
+                </div>
+              </div>
+              <Badge className={`${getCardTypeColor(card.cardType)} capitalize font-medium shrink-0`}>
+                {card.cardType}
+              </Badge>
             </div>
-            <div className="flex flex-col p-2 rounded-lg bg-background/60">
-              <span className="text-xs text-muted-foreground">Annual Fee</span>
-              <span className="font-semibold text-card-foreground">
-                {card.feesAndCharges.annual.type === 'fixed' ? `₹${card.feesAndCharges.annual.value.toLocaleString('en-IN')}` : `${card.feesAndCharges.annual.value}%`}
-              </span>
-            </div>
-          </div>
+          </CardHeader>
 
-          <div className="space-y-2 flex-1 min-h-0 flex flex-col">
-            <h4 className="text-sm font-medium text-card-foreground shrink-0">Key Benefits</h4>
-            <div className="flex flex-wrap gap-1.5">
-              {card.benefits.slice(0, expanded ? undefined : VISIBLE_COUNT).map((benefit, index) => (
-                <BenefitPill
-                  key={index}
-                  benefit={benefit}
-                  accentColor={bankColor.accent}
-                />
-              ))}
-              {card.benefits.length > VISIBLE_COUNT && (
-                <button
-                  onClick={(e) => { e.preventDefault(); e.stopPropagation(); setExpanded(!expanded); }}
-                  className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium
+          <CardContent className="space-y-4 pl-5 flex-1 flex flex-col min-h-0">
+            {/* AI Reason callout — search results only */}
+            {aiReason && (
+              <div
+                className="flex items-start gap-2 p-2.5 rounded-lg text-sm"
+                style={{ background: `${bankColor.bg}`, borderLeft: `3px solid ${bankColor.accent}` }}
+              >
+                <Sparkles className="h-4 w-4 shrink-0 mt-0.5" style={{ color: bankColor.accent }} />
+                <span className="text-card-foreground/80 leading-snug">{aiReason}</span>
+              </div>
+            )}
+
+            {card.description && (
+              <p className="text-sm text-muted-foreground line-clamp-2">{card.description}</p>
+            )}
+
+            <div className="grid grid-cols-2 gap-2 text-sm">
+              <div className="flex flex-col p-2 rounded-lg bg-background/60">
+                <span className="text-xs text-muted-foreground">Joining Fee</span>
+                <span className="font-semibold text-card-foreground">
+                  {card.feesAndCharges.joining.type === 'fixed' ? `₹${card.feesAndCharges.joining.value.toLocaleString('en-IN')}` : `${card.feesAndCharges.joining.value}%`}
+                </span>
+              </div>
+              <div className="flex flex-col p-2 rounded-lg bg-background/60">
+                <span className="text-xs text-muted-foreground">Annual Fee</span>
+                <span className="font-semibold text-card-foreground">
+                  {card.feesAndCharges.annual.type === 'fixed' ? `₹${card.feesAndCharges.annual.value.toLocaleString('en-IN')}` : `${card.feesAndCharges.annual.value}%`}
+                </span>
+              </div>
+            </div>
+
+            <div className="space-y-2 flex-1 min-h-0 flex flex-col">
+              <h4 className="text-sm font-medium text-card-foreground shrink-0">Key Benefits</h4>
+              <div className="flex flex-wrap gap-1.5">
+                {card.benefits.slice(0, expanded ? undefined : VISIBLE_COUNT).map((benefit, index) => (
+                  <BenefitPill
+                    key={index}
+                    benefit={benefit}
+                    accentColor={bankColor.accent}
+                  />
+                ))}
+                {card.benefits.length > VISIBLE_COUNT && (
+                  <button
+                    onClick={(e) => { e.preventDefault(); e.stopPropagation(); setExpanded(!expanded); }}
+                    className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium
                              bg-background/80 border border-border/50 text-muted-foreground
                              hover:bg-background hover:text-foreground hover:border-border
                              transition-colors cursor-pointer"
-                >
-                  {expanded ? (
-                    <><ChevronUp className="h-3 w-3" /> less</>
-                  ) : (
-                    <><ChevronDown className="h-3 w-3" /> +{card.benefits.length - VISIBLE_COUNT} more</>
-                  )}
-                </button>
-              )}
-            </div>
-          </div>
-
-          {/* Perks section */}
-          {card.perks && card.perks.length > 0 && (
-            <div className="space-y-1.5">
-              <h4 className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Perks</h4>
-              <div className="space-y-1">
-                {card.perks.slice(0, expanded ? undefined : 2).map((perk, index) => (
-                  <PerkItem key={index} perk={perk} accentColor={bankColor.accent} />
-                ))}
-                {card.perks.length > 2 && !expanded && (
-                  <button
-                    onClick={(e) => { e.preventDefault(); e.stopPropagation(); setExpanded(true); }}
-                    className="text-xs text-muted-foreground hover:text-foreground transition-colors cursor-pointer flex items-center gap-1"
                   >
-                    <ChevronDown className="h-3 w-3" />
-                    +{card.perks.length - 2} more perks
+                    {expanded ? (
+                      <><ChevronUp className="h-3 w-3" /> less</>
+                    ) : (
+                      <><ChevronDown className="h-3 w-3" /> +{card.benefits.length - VISIBLE_COUNT} more</>
+                    )}
                   </button>
                 )}
               </div>
             </div>
-          )}
-        </CardContent>
-      </Card>
-    </a>
+
+            {/* Perks section */}
+            {card.perks && card.perks.length > 0 && (
+              <div className="space-y-1.5">
+                <h4 className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Perks</h4>
+                <div className="space-y-1">
+                  {card.perks.slice(0, expanded ? undefined : 2).map((perk, index) => (
+                    <PerkItem key={index} perk={perk} accentColor={bankColor.accent} />
+                  ))}
+                  {card.perks.length > 2 && !expanded && (
+                    <button
+                      onClick={(e) => { e.preventDefault(); e.stopPropagation(); setExpanded(true); }}
+                      className="text-xs text-muted-foreground hover:text-foreground transition-colors cursor-pointer flex items-center gap-1"
+                    >
+                      <ChevronDown className="h-3 w-3" />
+                      +{card.perks.length - 2} more perks
+                    </button>
+                  )}
+                </div>
+              </div>
+            )}
+
+            {/* Action Buttons */}
+            <div className="mt-4 pt-4 border-t border-border/50 shrink-0 flex gap-2">
+              <Button
+                variant="outline"
+                className="flex-1 justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  window.open(card.link, '_blank');
+                }}
+              >
+                Apply Now <ExternalLink className="ml-2 h-4 w-4" />
+              </Button>
+              <Button
+                variant={isComparing(card) ? "secondary" : "outline"}
+                className={`shrink-0 ${isComparing(card) ? "bg-secondary text-secondary-foreground" : ""}`}
+                size="icon"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  toggleCardToCompare(card);
+                }}
+                disabled={!isComparing(card) && !canAddMore}
+                title={isComparing(card) ? "Remove from compare" : "Add to compare"}
+              >
+                <Scale className={`h-4 w-4 ${isComparing(card) ? "fill-current" : ""}`} />
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+
+      <CardDetailsSheet
+        card={card}
+        open={sheetOpen}
+        onOpenChange={setSheetOpen}
+      />
+    </>
   );
 };
 

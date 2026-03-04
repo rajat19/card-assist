@@ -8,6 +8,7 @@ import {
 interface PerkItemProps {
     perk: Perk;
     accentColor?: string;
+    hideText?: boolean;
 }
 
 const getCategoryIcon = (category: string) => {
@@ -29,11 +30,11 @@ const getCategoryIcon = (category: string) => {
     return <Check className={`${cls} text-financial-blue`} />;
 };
 
-const PerkItem = ({ perk, accentColor }: PerkItemProps) => {
+const PerkItem = ({ perk, accentColor, hideText }: PerkItemProps) => {
     return (
         <div className="flex items-start gap-2 text-xs text-muted-foreground">
             {getCategoryIcon(perk.category)}
-            <span className="leading-tight">{perk.title}</span>
+            {!hideText && <span className="leading-tight">{perk.title}</span>}
         </div>
     );
 };

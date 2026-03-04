@@ -3,12 +3,12 @@ import Navigation from '@/components/Navigation';
 import CreditCardItem from '@/components/CreditCardItem';
 import CardFiltersPanel, { CardFilters } from '@/components/CardFilters';
 import { CREDIT_CARDS } from '@/data/creditCards';
-import { Filter, X } from 'lucide-react';
+import { Filter } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 
 const AllCards = () => {
     const cards = CREDIT_CARDS;
-    const [showMobileFilters, setShowMobileFilters] = useState(false);
     const [filters, setFilters] = useState<CardFilters>({
         banks: [],
         cardTypes: [],
@@ -55,15 +55,26 @@ const AllCards = () => {
                             }
                         </p>
                     </div>
-                    {/* Mobile filter toggle */}
-                    <Button
-                        variant="outline"
-                        className="lg:hidden flex items-center gap-2"
-                        onClick={() => setShowMobileFilters(!showMobileFilters)}
-                    >
-                        {showMobileFilters ? <X className="h-4 w-4" /> : <Filter className="h-4 w-4" />}
-                        Filters
-                    </Button>
+                    {/* Mobile filter toggle using Sheet */}
+                    <Sheet>
+                        <SheetTrigger asChild>
+                            <Button variant="outline" className="lg:hidden flex items-center gap-2">
+                                <Filter className="h-4 w-4" />
+                                Filters
+                            </Button>
+                        </SheetTrigger>
+                        <SheetContent side="right" className="w-[85vw] sm:w-[350px] overflow-y-auto p-4 sm:p-6">
+                            <SheetHeader className="mb-4 text-left">
+                                <SheetTitle>Filters</SheetTitle>
+                            </SheetHeader>
+                            <CardFiltersPanel
+                                filters={filters}
+                                onFiltersChange={setFilters}
+                                totalCards={cards.length}
+                                filteredCount={filteredCards.length}
+                            />
+                        </SheetContent>
+                    </Sheet>
                 </div>
 
                 <div className="flex gap-8">
@@ -76,29 +87,6 @@ const AllCards = () => {
                             filteredCount={filteredCards.length}
                         />
                     </aside>
-
-                    {/* Mobile filters */}
-                    {showMobileFilters && (
-                        <div className="fixed inset-0 z-50 bg-black/50 lg:hidden" onClick={() => setShowMobileFilters(false)}>
-                            <div
-                                className="absolute right-0 top-0 h-full w-80 bg-background overflow-y-auto p-4"
-                                onClick={e => e.stopPropagation()}
-                            >
-                                <div className="flex items-center justify-between mb-4">
-                                    <span className="font-semibold text-lg">Filters</span>
-                                    <Button variant="ghost" size="sm" onClick={() => setShowMobileFilters(false)}>
-                                        <X className="h-4 w-4" />
-                                    </Button>
-                                </div>
-                                <CardFiltersPanel
-                                    filters={filters}
-                                    onFiltersChange={setFilters}
-                                    totalCards={cards.length}
-                                    filteredCount={filteredCards.length}
-                                />
-                            </div>
-                        </div>
-                    )}
 
                     {/* Card grid */}
                     <div className="flex-1 min-w-0">
