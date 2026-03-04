@@ -117,136 +117,189 @@ async function fetchPageText(url: string): Promise<string> {
 
 // ── AI extraction ──────────────────────────────────────────────────────────────
 
-function buildPrompt(pageText: string, url: string, bankName: string): string {
-    return `You are a credit card data extraction assistant.
-
-Given the text content of a bank's credit card page, extract the card details.
-
-REQUIRED JSON structure:
-{
-  "name": "Full Official Card Name",
-  "bankName": "${bankName}",
-  "cardType": "premium" | "regular" | "entry" | "cobrand",
-  "description": "One-line summary of the card's value proposition",
-  "benefits": [
-    {
-      "category": "Category (e.g. Shopping, Dining, Amazon, Swiggy, Travel, Fuel, Groceries, Online Shopping, Entertainment, Utilities, General)",
-      "type": "cashback" | "reward_points" | "miles" | "discount" | "waiver" | "rebate" | "reimbursement" | "voucher" | "fixed",
-      "value": <number: percentage value or multiplier>,
-      "description": "Optional detail about the benefit"
-    }
-  ],
-  "perks": [
-    {
-      "category": "Category (e.g. Travel, Entertainment, Insurance, Dining, Lifestyle, General)",
-      "title": "Short title (e.g. Priority Pass Lounge Access, BookMyShow BOGO)",
-      "description": "Full description of the perk"
-    }
-  ],
-  "feesAndCharges": {
-    "annual": { "value": <number>, "type": "fixed" | "percentage", "description": "optional" },
-    "joining": { "value": <number>, "type": "fixed" | "percentage", "description": "optional" },
-    "cashWithdrawal": { "value": <number>, "type": "fixed" | "percentage", "description": "optional" },
-    "forex": { "value": <number>, "type": "fixed" | "percentage", "description": "optional" },
-    "fuelTransaction": { "value": <number>, "type": "fixed" | "percentage", "description": "optional" }
-  },
-  "link": "${url}"
+interface PageData {
+    url: string;
+    bankName: string;
+    text: string;
 }
 
+function buildBatchPrompt(pages: PageData[]): string {
+    return `You are a credit card data extraction assistant.
+
+Given the text contents of multiple bank credit card pages, extract the card details for each page.
+Return a valid JSON **array** of objects, where each object has the exact structure below.
+
+REQUIRED JSON structure for each card:
+[
+  {
+    "name": "Full Official Card Name",
+    "bankName": "Bank Name from the metadata provided below",
+    "cardType": "premium" | "regular" | "entry" | "cobrand",
+    "description": "One-line summary of the card's value proposition",
+    "benefits": [
+      {
+        "category": "Category (e.g. Shopping, Dining, Amazon, Swiggy, Travel, Fuel, Groceries, Online Shopping, Entertainment, Utilities, General)",
+        "type": "cashback" | "reward_points" | "miles" | "discount" | "waiver" | "rebate" | "reimbursement" | "voucher" | "fixed",
+        "value": <number: percentage value or multiplier>,
+        "description": "Optional detail about the benefit"
+      }
+    ],
+    "perks": [
+      {
+        "category": "Category (e.g. Travel, Entertainment, Insurance, Dining, Lifestyle, General)",
+        "title": "Short title (e.g. Priority Pass Lounge Access, BookMyShow BOGO)",
+        "description": "Full description of the perk"
+      }
+    ],
+    "feesAndCharges": {
+      "annual": { "value": <number>, "type": "fixed" | "percentage", "description": "optional" },
+      "joining": { "value": <number>, "type": "fixed" | "percentage", "description": "optional" },
+      "cashWithdrawal": { "value": <number>, "type": "fixed" | "percentage", "description": "optional" },
+      "forex": { "value": <number>, "type": "fixed" | "percentage", "description": "optional" },
+      "fuelTransaction": { "value": <number>, "type": "fixed" | "percentage", "description": "optional" }
+    },
+    "link": "URL from the metadata provided below"
+  }
+]
+
 RULES:
-- Return ONLY valid JSON, no markdown fences, no extra text.
+- Return ONLY a valid JSON array of objects, no markdown fences, no extra text. The response must start with '[' and end with ']'.
 - cardType: use "cobrand" for co-branded cards (e.g., Amazon Pay ICICI, Flipkart Axis).
   Use "premium" for high-fee cards (annual > ₹2000). Use "entry" for secured/basic cards.
   Use "regular" for everything else.
 - For fees, value should be the numeric amount (e.g., 500 for ₹500 annual fee).
-- For benefits, always include a "General" category for base reward rate.
 - If a value cannot be determined from the page, use 0 for fees and 1 for general reward rate.
+- BENEFITS vs PERKS — this is critical:
+  - "benefits" = EARNING RATES only. Things with a percentage or multiplier: cashback %, reward points per ₹100, miles per ₹100, discount %.
+    Examples: "5% cashback on Amazon", "2 RP per ₹100 on dining", "1% fuel surcharge waiver"
+    The "value" field must be the rate/percentage (e.g. 5 for 5%, 2 for 2x).
+    Always include a "General" category for the base reward rate.
+  - "perks" = FEATURES and PRIVILEGES. Things you GET, not rates you EARN:
+    Examples: "Complimentary lounge access", "Priority Pass membership", "₹5000 welcome voucher",
+    "BookMyShow BOGO", "Golf rounds", "Insurance cover", "Concierge service", "Membership (Swiggy One, EazyDiner)"
+    The "title" should be a concise phrase (under 50 chars). Use "description" for the full detail.
+  - If unsure, ask: "Does this have a meaningful percentage/rate?" → benefit. "Is this a feature you receive?" → perk.
 
-PAGE TEXT:
-${pageText}`;
+PAGE TEXTS TO EXTRACT:
+${pages.map((p, i) => `--- PAGE ${i + 1} ---
+URL: ${p.url}
+Bank: ${p.bankName}
+TEXT:
+${p.text}`).join('\n\n')}`;
 }
 
-async function extractCard(
+async function extractCardsBatch(
     genAI: GoogleGenerativeAI,
-    pageText: string,
-    url: string,
-    bankName: string,
-): Promise<CardJson | null> {
+    pages: PageData[],
+    isMock: boolean
+): Promise<CardJson[]> {
+    if (pages.length === 0) return [];
+
+    if (isMock) {
+        console.log(`  🤖 MOCK MODE: Faking extraction for ${pages.length} cards...`);
+        await sleep(1000); // simulate API delay
+        return pages.map(p => ({
+            name: `${p.bankName} Mock Card ${Math.floor(Math.random() * 1000)}`,
+            bankName: p.bankName,
+            cardType: 'regular',
+            description: 'This is a mock card for testing batching logic.',
+            benefits: [
+                { category: 'General', type: 'cashback', value: 1.5, description: 'Mock cashback' }
+            ],
+            perks: [
+                { category: 'Travel', title: 'Mock Lounge Access', description: 'Access to mock lounges' }
+            ],
+            feesAndCharges: {
+                annual: { value: 500, type: 'fixed' },
+                joining: { value: 0, type: 'fixed' },
+                cashWithdrawal: { value: 2.5, type: 'percentage' },
+                forex: { value: 3.5, type: 'percentage' }
+            },
+            link: p.url,
+            updatedAt: today,
+            dataSource: 'scraped'
+        }));
+    }
+
     const model = genAI.getGenerativeModel({ model: GEMINI_MODEL });
-    const prompt = buildPrompt(pageText, url, bankName);
+    const prompt = buildBatchPrompt(pages);
 
     const result = await retryWithBackoff(
         () => model.generateContent(prompt),
-        `AI extraction for ${bankName} card`,
+        `AI batch extraction for ${pages.length} cards`,
     );
     const text = result.response.text();
 
-    const jsonMatch = text.match(/\{[\s\S]*\}/);
+    const jsonMatch = text.match(/\[[\s\S]*\]/);
     if (!jsonMatch) {
-        console.error('  ✗ Failed to extract JSON from AI response');
-        return null;
+        console.error('  ✗ Failed to extract JSON array from AI response');
+        console.error('Response was:', text.substring(0, 500) + '...');
+        return [];
     }
 
     try {
-        const parsed = JSON.parse(jsonMatch[0]) as CardJson;
-        if (!parsed.name || !parsed.benefits || !parsed.feesAndCharges) {
-            console.error('  ✗ AI response missing required fields');
-            return null;
-        }
-        parsed.link = url;
-        parsed.bankName = bankName;
-        parsed.updatedAt = today;
-        parsed.dataSource = 'scraped';
-        return parsed;
+        const parsed = JSON.parse(jsonMatch[0]) as CardJson[];
+        return parsed.map((card, i) => {
+            // Validate required fields and assign proper meta
+            if (!card.name || !card.benefits || !card.feesAndCharges) {
+                console.error(`  ✗ AI response missing required fields for page ${i + 1}`);
+            }
+            // Ensure bankName and link match what we asked for
+            const reqPage = pages.find(p => p.url === card.link) || pages[i];
+
+            card.link = reqPage.url;
+            card.bankName = reqPage.bankName;
+            card.updatedAt = today;
+            card.dataSource = 'scraped';
+            return card;
+        });
     } catch {
         console.error('  ✗ Failed to parse AI JSON response');
-        return null;
+        return [];
     }
 }
 
 // ── Main ───────────────────────────────────────────────────────────────────────
 
 async function main() {
-    const urls = process.argv.slice(2).filter((arg) => arg.startsWith('http'));
+    const args = process.argv.slice(2);
+    const urls = args.filter((arg) => arg.startsWith('http'));
+    const isMock = args.includes('--mock');
 
     if (urls.length === 0) {
-        console.error('Usage: npx tsx scripts/add-card.ts <url1> [url2] ...');
+        console.error('Usage: npx tsx scripts/add-card.ts <url1> [url2] ... [--mock]');
         console.error('Example: npx tsx scripts/add-card.ts https://www.hdfcbank.com/personal/pay/cards/credit-cards/regalia-credit-card');
         process.exit(1);
     }
 
     const apiKey = process.env.GEMINI_API_KEY;
-    if (!apiKey) {
-        console.error('Error: GEMINI_API_KEY environment variable is required.');
+    if (!apiKey && !isMock) {
+        console.error('Error: GEMINI_API_KEY environment variable is required unless --mock is used.');
         console.error('Set it in .env or run: GEMINI_API_KEY=<key> npx tsx scripts/add-card.ts <url>');
         process.exit(1);
     }
 
-    const genAI = new GoogleGenerativeAI(apiKey);
+    const genAI = new GoogleGenerativeAI(apiKey || 'MOCK_KEY');
 
-    console.log(`\n🆕 Add Card — ${urls.length} URL(s)`);
+    console.log(`\n🆕 Add Card — ${urls.length} URL(s) ${isMock ? '(MOCK MODE)' : ''}`);
     console.log(`   Date: ${today}\n`);
 
     let added = 0;
     let skipped = 0;
     let failed = 0;
 
-    for (const url of urls) {
-        console.log(`\n🔗 ${url}`);
+    // 1. Fetch pages sequentially to avoid overloading domains
+    const validPages: PageData[] = [];
 
-        // Detect bank from URL
+    for (const url of urls) {
+        console.log(`\n🔗 Checking: ${url}`);
         const bank = detectBank(url);
         if (!bank) {
-            console.error('  ✗ Could not detect bank from URL. Supported domains:');
-            for (const [pattern, slug] of BANK_URL_PATTERNS) {
-                console.error(`    ${slug}: ${pattern}`);
-            }
+            console.error('  ✗ Could not detect bank from URL. Skipped.');
             failed++;
             continue;
         }
-        console.log(`  🏦 Detected: ${bank.bankName} (${bank.slug})`);
 
-        // Check if card already exists
         const existingCards = readBankCards(bank.slug);
         const alreadyExists = existingCards.some(
             (c) => c.link === url || c.link.replace(/\/$/, '') === url.replace(/\/$/, ''),
@@ -257,46 +310,58 @@ async function main() {
             continue;
         }
 
-        // Fetch page
-        console.log('  📄 Fetching page...');
-        let pageText: string;
+        console.log(`  🏦 Detected: ${bank.bankName}`);
+        console.log('  📄 Fetching page content...');
         try {
-            pageText = await fetchPageText(url);
+            const pageText = await fetchPageText(url);
+            if (pageText.length < 200) {
+                console.error('  ✗ Page text too short — page may require JS or may be blocked');
+                failed++;
+                continue;
+            }
+            console.log(`     Got ${pageText.length} chars`);
+            validPages.push({ url, bankName: bank.bankName, text: pageText });
         } catch (err) {
             const msg = err instanceof Error ? err.message : String(err);
             console.error(`  ✗ Failed to fetch page: ${msg}`);
             failed++;
-            continue;
         }
 
-        if (pageText.length < 200) {
-            console.error('  ✗ Page text too short — page may require JS or may be blocked');
-            failed++;
-            continue;
-        }
-        console.log(`  Got ${pageText.length} chars`);
-
-        // Extract via AI
-        console.log('  🤖 Extracting card data via Gemini...');
-        const card = await extractCard(genAI, pageText, url, bank.bankName);
-        if (!card) {
-            failed++;
-            continue;
-        }
-
-        console.log(`  ✓ Extracted: ${card.name}`);
-        console.log(`    Type: ${card.cardType}`);
-        console.log(`    Annual fee: ₹${card.feesAndCharges.annual.value}`);
-        console.log(`    Benefits: ${card.benefits.map((b) => `${b.category} ${b.value}%`).join(', ')}`);
-
-        // Add to bank file
-        existingCards.push(card);
-        writeBankCards(bank.slug, existingCards);
-        console.log(`  ✅ Added to ${BANK_FILES[bank.slug]}`);
-        added++;
-
+        // Wait between pages to not trigger bot detection
         if (urls.indexOf(url) < urls.length - 1) {
             await sleep(SCRAPE_DELAY_MS);
+        }
+    }
+
+    if (validPages.length === 0) {
+        console.log('\n❌ No valid pages to extract info from.');
+        process.exit(0);
+    }
+
+    // 2. Extract using Gemini in a single batched prompt
+    console.log(`\n🤖 Extracting data for ${validPages.length} valid pages via Gemini...`);
+    const extractedCards = await extractCardsBatch(genAI, validPages, isMock);
+
+    if (extractedCards.length === 0) {
+        console.log('❌ Failed to extract any card details.');
+    } else {
+        // 3. Save to appropriate files
+        for (const card of extractedCards) {
+            if (!card?.name) continue;
+
+            const bank = detectBank(card.link);
+            if (!bank) continue;
+
+            const existingCards = readBankCards(bank.slug);
+            existingCards.push(card);
+            writeBankCards(bank.slug, existingCards);
+
+            console.log(`\n  ✅ Added: ${card.name}`);
+            console.log(`     Type: ${card.cardType}`);
+            console.log(`     Bank File: ${BANK_FILES[bank.slug]}`);
+            if (card.feesAndCharges?.annual) console.log(`     Annual fee: ₹${card.feesAndCharges.annual.value}`);
+            if (card.benefits?.length) console.log(`     Benefits: ${card.benefits.map((b) => `${b.category} ${typeof b.value === 'number' ? b.value : 0}%`).join(', ')}`);
+            added++;
         }
     }
 

@@ -12,6 +12,9 @@ export const SCRAPE_DELAY_MS = 5_000;
 /** Max retries on rate-limit (429) errors */
 export const MAX_RETRIES = 3;
 
+/** Number of cards to process in a single Gemini API call */
+export const BATCH_SIZE = 5;
+
 /** Initial backoff delay (ms) for retry — doubles on each attempt */
 export const INITIAL_BACKOFF_MS = 35_000;
 
