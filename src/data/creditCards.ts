@@ -20,4 +20,4 @@ export const CREDIT_CARDS: CreditCard[] = [
   ...rblCards,
   ...sbiCards,
   ...yesCards,
-] as CreditCard[];
+].sort((a, b) => a.name.localeCompare(b.name)) as CreditCard[];

@@ -26,6 +26,11 @@ export enum BenefitType {
   REWARD_POINTS = 'reward_points',
   VOUCHER = 'voucher',
   FIXED = 'fixed',
+  MILES = 'miles',
+  DISCOUNT = 'discount',
+  WAIVER = 'waiver',
+  REBATE = 'rebate',
+  REIMBURSEMENT = 'reimbursement',
 }
 
 export interface Benefit {

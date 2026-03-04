@@ -1,10 +1,10 @@
-import { useMemo, useState } from 'react';
+import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Search, TrendingUp } from 'lucide-react';
-import { BenefitType, CreditCard, CATEGORIES } from '@/types/creditcard';
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
+import { CreditCard, CATEGORIES } from '@/types/creditcard';
+import CreditCardItem from '@/components/CreditCardItem';
 import { aiSuggestCards } from '@/services/ai';
 
 interface SearchCardsProps {
@@ -19,20 +19,17 @@ const SearchCards = ({ cards }: SearchCardsProps) => {
   const [overallReasoning, setOverallReasoning] = useState<string | undefined>(undefined);
   const [aiReasonByName, setAiReasonByName] = useState<Record<string, string | undefined>>({});
   const [displayQuery, setDisplayQuery] = useState<string>('');
-  const [resultKey, setResultKey] = useState<string>('');
 
   const handleSearch = async (customQuery?: string) => {
     const effectiveQuery = (customQuery ?? searchQuery).trim();
     if (!effectiveQuery) return;
 
-    // Prepare UI for fresh search
     setHasSearched(true);
     setLoading(true);
     setSearchResults([]);
     setOverallReasoning(undefined);
     setAiReasonByName({});
     setDisplayQuery('');
-    setResultKey('');
     try {
       const { results, reasoning } = await aiSuggestCards(effectiveQuery, cards);
       const nameToCard = new Map(cards.map((c) => [c.name, c]));
@@ -42,21 +39,19 @@ const SearchCards = ({ cards }: SearchCardsProps) => {
       results.forEach((r) => { rmap[r.name] = r.reason; });
       setAiReasonByName(rmap);
       setOverallReasoning(reasoning);
-      // Derive a concise display label and a normalized key for matching
       const candidateFromInput = CATEGORIES.find((cat) => effectiveQuery.toLowerCase().includes(cat.toLowerCase()));
-      let label: string | undefined = candidateFromInput as string | undefined;
-      let key = candidateFromInput?.toLowerCase() ?? '';
+      const label: string | undefined = candidateFromInput as string | undefined;
       if (!label && rankedCards[0]) {
         const all = rankedCards[0].benefits ?? [];
         if (all.length) {
           const topBenefit = all.reduce((acc, b) => (b.value > acc.value ? b : acc), all[0]);
-          label = topBenefit.category;
-          key = label.toLowerCase();
+          setDisplayQuery(topBenefit.category);
+        } else {
+          setDisplayQuery('Top Picks');
         }
+      } else {
+        setDisplayQuery(label || 'Top Picks');
       }
-      setDisplayQuery(label || 'Top Picks');
-      setResultKey(key);
-      setHasSearched(true);
     } finally {
       setLoading(false);
     }
@@ -65,19 +60,6 @@ const SearchCards = ({ cards }: SearchCardsProps) => {
   const handleKeyPress = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter') {
       handleSearch();
-    }
-  };
-
-  const bestType = (benefitType: BenefitType) => {
-    switch (benefitType) {
-      case BenefitType.CASHBACK:
-        return '% Cashback';
-      case BenefitType.REWARD_POINTS:
-        return ' RP';
-      case BenefitType.VOUCHER:
-        return ' Voucher';
-      case BenefitType.FIXED:
-        return ' Cashback';
     }
   };
 
@@ -184,54 +166,16 @@ const SearchCards = ({ cards }: SearchCardsProps) => {
               </CardContent>
             </Card>
           ) : (
-            <Card className="bg-gradient-card shadow-card border-0">
-              <CardContent>
-                <div className="overflow-x-auto">
-                  <Table>
-                    <TableHeader>
-                      <TableRow>
-                        <TableHead>Card</TableHead>
-                        <TableHead>Best Match Benefit</TableHead>
-                        <TableHead>Description</TableHead>
-                        <TableHead>Why</TableHead>
-                      </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                      {searchResults.map((card) => {
-                        const q = (resultKey || searchQuery).toLowerCase();
-                        const relevant = card.benefits.filter((b) =>
-                          b.category.toLowerCase().includes(q) || (b.description?.toLowerCase().includes(q) ?? false)
-                        );
-                        const pool = relevant.length ? relevant : (card.benefits ?? []);
-                        const best = pool.length
-                          ? pool.reduce((acc, b) => (b.value > acc.value ? b : acc), pool[0])
-                          : undefined;
-                        return (
-                          <TableRow key={card.name}>
-                            <TableCell className="font-medium">{card.name}</TableCell>
-                            <TableCell>
-                              {best ? (
-                                <span>
-                                  {best.category}: {best.value}{bestType(best.type)}
-                                </span>
-                              ) : (
-                                <span className="text-muted-foreground">—</span>
-                              )}
-                            </TableCell>
-                            <TableCell className="max-w-[360px] truncate" title={card.description || ''}>
-                              {card.description || '—'}
-                            </TableCell>
-                            <TableCell className="max-w-[360px] truncate" title={aiReasonByName[card.name] || ''}>
-                              {aiReasonByName[card.name] || '—'}
-                            </TableCell>
-                          </TableRow>
-                        );
-                      })}
-                    </TableBody>
-                  </Table>
-                </div>
-              </CardContent>
-            </Card>
+            <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+              {searchResults.map((card, index) => (
+                <CreditCardItem
+                  key={card.name}
+                  card={card}
+                  rank={index + 1}
+                  aiReason={aiReasonByName[card.name]}
+                />
+              ))}
+            </div>
           )}
         </div>
       )}

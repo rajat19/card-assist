@@ -33,8 +33,8 @@ const CARD_TYPES = [
     { value: CardType.COBRAND, label: 'Cobrand' },
 ];
 
-const MAX_JOINING_FEE = 10000;
-const MAX_ANNUAL_FEE = 12500;
+const MAX_JOINING_FEE = 100000;
+const MAX_ANNUAL_FEE = 100000;
 
 interface CardFiltersProps {
     filters: CardFilters;

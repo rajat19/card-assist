@@ -1,207 +1,1047 @@
 [
-    {
-        "name": "ICICI Bank Coral Credit Card",
-        "bankName": "ICICI Bank",
-        "cardType": "entry",
-        "description": "RuPay network card with rewards on everyday categories",
-        "benefits": [
-            {
-                "category": "Utilities",
-                "type": "reward_points",
-                "value": 2
-            },
-            {
-                "category": "Shopping",
-                "type": "reward_points",
-                "value": 2
-            },
-            {
-                "category": "General",
-                "type": "reward_points",
-                "value": 1
-            }
-        ],
-        "feesAndCharges": {
-            "annual": {
-                "value": 499,
-                "type": "fixed"
-            },
-            "joining": {
-                "value": 499,
-                "type": "fixed"
-            },
-            "cashWithdrawal": {
-                "value": 2.5,
-                "type": "percentage",
-                "description": "2.5% (Min. ₹300)"
-            },
-            "forex": {
-                "value": 3.5,
-                "type": "percentage"
-            },
-            "fuelTransaction": {
-                "value": 1,
-                "type": "percentage",
-                "description": "1% surcharge waiver (caps apply)"
-            }
-        },
-        "link": "https://www.icicibank.com/personal-banking/cards/credit-card/rupay-credit-card",
-        "updatedAt": "2025-09-06",
-        "dataSource": "manual"
+  {
+    "name": "ICICI Bank Coral Credit Card",
+    "bankName": "ICICI Bank",
+    "cardType": "entry",
+    "description": "RuPay network card with rewards on everyday categories",
+    "benefits": [
+      {
+        "category": "Utilities",
+        "type": "reward_points",
+        "value": 2
+      },
+      {
+        "category": "Shopping",
+        "type": "reward_points",
+        "value": 2
+      },
+      {
+        "category": "General",
+        "type": "reward_points",
+        "value": 1
+      }
+    ],
+    "feesAndCharges": {
+      "annual": {
+        "value": 499,
+        "type": "fixed"
+      },
+      "joining": {
+        "value": 499,
+        "type": "fixed"
+      },
+      "cashWithdrawal": {
+        "value": 2.5,
+        "type": "percentage",
+        "description": "2.5% (Min. ₹300)"
+      },
+      "forex": {
+        "value": 3.5,
+        "type": "percentage"
+      },
+      "fuelTransaction": {
+        "value": 1,
+        "type": "percentage",
+        "description": "1% surcharge waiver (caps apply)"
+      }
     },
-    {
-        "name": "Amazon Pay ICICI Credit Card",
-        "bankName": "ICICI Bank",
-        "cardType": "cobrand",
-        "description": "Best for Amazon shopping with Prime/non-Prime benefits",
-        "benefits": [
-            {
-                "category": "Amazon",
-                "type": "cashback",
-                "value": 5,
-                "description": "For Prime members on Amazon"
-            },
-            {
-                "category": "Amazon",
-                "type": "cashback",
-                "value": 3,
-                "description": "For non-Prime members on Amazon"
-            },
-            {
-                "category": "General",
-                "type": "cashback",
-                "value": 1,
-                "description": "All other payments"
-            }
-        ],
-        "feesAndCharges": {
-            "annual": {
-                "value": 0,
-                "type": "fixed",
-                "description": "Lifetime free"
-            },
-            "joining": {
-                "value": 0,
-                "type": "fixed"
-            },
-            "cashWithdrawal": {
-                "value": 2.5,
-                "type": "percentage",
-                "description": "2.5% (Min. ₹300)"
-            },
-            "forex": {
-                "value": 3.5,
-                "type": "percentage"
-            },
-            "fuelTransaction": {
-                "value": 1,
-                "type": "percentage",
-                "description": "1% surcharge waiver (caps apply)"
-            }
-        },
-        "link": "https://www.icicibank.com/personal-banking/cards/credit-card/amazon-pay-credit-card/benefits-features",
-        "updatedAt": "2025-09-06",
-        "dataSource": "manual"
+    "link": "https://www.icicibank.com/personal-banking/cards/credit-card/rupay-credit-card",
+    "updatedAt": "2025-09-06",
+    "dataSource": "manual"
+  },
+  {
+    "name": "Amazon Pay ICICI Credit Card",
+    "bankName": "ICICI Bank",
+    "cardType": "cobrand",
+    "description": "Best for Amazon shopping with Prime/non-Prime benefits",
+    "benefits": [
+      {
+        "category": "Amazon",
+        "type": "cashback",
+        "value": 5,
+        "description": "For Prime members on Amazon"
+      },
+      {
+        "category": "Amazon",
+        "type": "cashback",
+        "value": 3,
+        "description": "For non-Prime members on Amazon"
+      },
+      {
+        "category": "General",
+        "type": "cashback",
+        "value": 1,
+        "description": "All other payments"
+      }
+    ],
+    "feesAndCharges": {
+      "annual": {
+        "value": 0,
+        "type": "fixed",
+        "description": "Lifetime free"
+      },
+      "joining": {
+        "value": 0,
+        "type": "fixed"
+      },
+      "cashWithdrawal": {
+        "value": 2.5,
+        "type": "percentage",
+        "description": "2.5% (Min. ₹300)"
+      },
+      "forex": {
+        "value": 3.5,
+        "type": "percentage"
+      },
+      "fuelTransaction": {
+        "value": 1,
+        "type": "percentage",
+        "description": "1% surcharge waiver (caps apply)"
+      }
     },
-    {
-        "name": "ICICI Bank Platinum Chip Credit Card",
-        "bankName": "ICICI Bank",
-        "cardType": "entry",
-        "description": "Entry card with basic rewards and EMV chip security",
-        "benefits": [
-            {
-                "category": "Shopping",
-                "type": "reward_points",
-                "value": 2
-            },
-            {
-                "category": "Dining",
-                "type": "reward_points",
-                "value": 2
-            },
-            {
-                "category": "General",
-                "type": "reward_points",
-                "value": 1
-            }
-        ],
-        "feesAndCharges": {
-            "annual": {
-                "value": 0,
-                "type": "fixed",
-                "description": "Often LTF; verify variant"
-            },
-            "joining": {
-                "value": 0,
-                "type": "fixed"
-            },
-            "cashWithdrawal": {
-                "value": 2.5,
-                "type": "percentage",
-                "description": "2.5% (Min. ₹300)"
-            },
-            "forex": {
-                "value": 3.5,
-                "type": "percentage"
-            },
-            "fuelTransaction": {
-                "value": 1,
-                "type": "percentage",
-                "description": "1% surcharge waiver (caps apply)"
-            }
-        },
-        "link": "https://www.icicibank.com/personal-banking/cards/credit-card/platinum-chip",
-        "updatedAt": "2025-09-06",
-        "dataSource": "manual"
+    "link": "https://www.icicibank.com/personal-banking/cards/credit-card/amazon-pay-credit-card/benefits-features",
+    "updatedAt": "2025-09-06",
+    "dataSource": "manual"
+  },
+  {
+    "name": "ICICI Bank Platinum Chip Credit Card",
+    "bankName": "ICICI Bank",
+    "cardType": "entry",
+    "description": "Entry card with basic rewards and EMV chip security",
+    "benefits": [
+      {
+        "category": "Shopping",
+        "type": "reward_points",
+        "value": 2
+      },
+      {
+        "category": "Dining",
+        "type": "reward_points",
+        "value": 2
+      },
+      {
+        "category": "General",
+        "type": "reward_points",
+        "value": 1
+      }
+    ],
+    "feesAndCharges": {
+      "annual": {
+        "value": 0,
+        "type": "fixed",
+        "description": "Often LTF; verify variant"
+      },
+      "joining": {
+        "value": 0,
+        "type": "fixed"
+      },
+      "cashWithdrawal": {
+        "value": 2.5,
+        "type": "percentage",
+        "description": "2.5% (Min. ₹300)"
+      },
+      "forex": {
+        "value": 3.5,
+        "type": "percentage"
+      },
+      "fuelTransaction": {
+        "value": 1,
+        "type": "percentage",
+        "description": "1% surcharge waiver (caps apply)"
+      }
     },
-    {
-        "name": "ICICI Bank Sapphiro Credit Card",
-        "bankName": "ICICI Bank",
-        "cardType": "regular",
-        "description": "Premium travel and lifestyle card with airport lounge access",
-        "benefits": [
-            {
-                "category": "Travel",
-                "type": "reward_points",
-                "value": 4
-            },
-            {
-                "category": "Dining",
-                "type": "reward_points",
-                "value": 4
-            },
-            {
-                "category": "General",
-                "type": "reward_points",
-                "value": 1
-            }
-        ],
-        "feesAndCharges": {
-            "annual": {
-                "value": 3500,
-                "type": "fixed"
-            },
-            "joining": {
-                "value": 6500,
-                "type": "fixed"
-            },
-            "cashWithdrawal": {
-                "value": 2.5,
-                "type": "percentage",
-                "description": "2.5% (Min. ₹300)"
-            },
-            "forex": {
-                "value": 3.5,
-                "type": "percentage"
-            },
-            "fuelTransaction": {
-                "value": 1,
-                "type": "percentage",
-                "description": "1% surcharge waiver (caps apply)"
-            }
-        },
-        "link": "https://www.icicibank.com/personal-banking/cards/credit-card/sapphiro-credit-card/key-privileges?ITM=nli_cms_CC_choosecard_sapphiro_ccindex_knowmorebtn",
-        "updatedAt": "2025-09-06",
-        "dataSource": "manual"
-    }
+    "link": "https://www.icicibank.com/personal-banking/cards/credit-card/platinum-chip",
+    "updatedAt": "2025-09-06",
+    "dataSource": "manual"
+  },
+  {
+    "name": "ICICI Bank Sapphiro Credit Card",
+    "bankName": "ICICI Bank",
+    "cardType": "regular",
+    "description": "Premium travel and lifestyle card with airport lounge access",
+    "benefits": [
+      {
+        "category": "Travel",
+        "type": "reward_points",
+        "value": 4
+      },
+      {
+        "category": "Dining",
+        "type": "reward_points",
+        "value": 4
+      },
+      {
+        "category": "General",
+        "type": "reward_points",
+        "value": 1
+      }
+    ],
+    "feesAndCharges": {
+      "annual": {
+        "value": 3500,
+        "type": "fixed"
+      },
+      "joining": {
+        "value": 6500,
+        "type": "fixed"
+      },
+      "cashWithdrawal": {
+        "value": 2.5,
+        "type": "percentage",
+        "description": "2.5% (Min. ₹300)"
+      },
+      "forex": {
+        "value": 3.5,
+        "type": "percentage"
+      },
+      "fuelTransaction": {
+        "value": 1,
+        "type": "percentage",
+        "description": "1% surcharge waiver (caps apply)"
+      }
+    },
+    "link": "https://www.icicibank.com/personal-banking/cards/credit-card/sapphiro-credit-card/key-privileges?ITM=nli_cms_CC_choosecard_sapphiro_ccindex_knowmorebtn",
+    "updatedAt": "2025-09-06",
+    "dataSource": "manual"
+  },
+  {
+    "name": "Rubyx Credit Card",
+    "bankName": "ICICI Bank",
+    "cardType": "premium",
+    "description": "Credit card offering high-end lifestyle perks including welcome vouchers, lounge access, golf rounds, and movie discounts.",
+    "benefits": [
+      {
+        "category": "General",
+        "type": "reward_points",
+        "value": 2,
+        "description": "2 reward points per ₹100 on Domestic Spend"
+      },
+      {
+        "category": "Online Shopping",
+        "type": "cashback",
+        "value": 5000,
+        "description": "Welcome Vouchers worth over ₹5,000 from Tata CLiQ, Tata Croma, EazyDiner, EaseMyTrip and more"
+      },
+      {
+        "category": "Travel",
+        "type": "reward_points",
+        "value": 2,
+        "description": "Complimentary Domestic Airport Lounge access quarterly"
+      },
+      {
+        "category": "Travel",
+        "type": "reward_points",
+        "value": 8,
+        "description": "Complimentary Railway Lounge access annually"
+      },
+      {
+        "category": "Entertainment",
+        "type": "reward_points",
+        "value": 2,
+        "description": "Complimentary rounds of golf monthly basis eligible spends"
+      },
+      {
+        "category": "Entertainment",
+        "type": "cashback",
+        "value": 25,
+        "description": "25% off up to ₹150 on movie tickets on BookMyShow and INOX, twice a month"
+      },
+      {
+        "category": "Insurance",
+        "type": "reward_points",
+        "value": 10000000,
+        "description": "Air Accident Insurance cover up to ₹1 crore"
+      },
+      {
+        "category": "Fuel",
+        "type": "cashback",
+        "value": 1,
+        "description": "1% fuel surcharge waiver on transactions worth ₹400–₹4,000"
+      },
+      {
+        "category": "General",
+        "type": "reward_points",
+        "value": 3000,
+        "description": "3,000 Reward Points on ₹3 lakh spend & 1,500 for every additional ₹1 lakh spend (up to 15,000 reward points per year)"
+      },
+      {
+        "category": "Insurance",
+        "type": "reward_points",
+        "value": 200000,
+        "description": "Personal Accident Insurance Cover of ₹2 lakh (Rupay Variant)"
+      },
+      {
+        "category": "Travel",
+        "type": "reward_points",
+        "value": 4,
+        "description": "4 reward points per ₹100 on International Spend"
+      },
+      {
+        "category": "Utilities",
+        "type": "reward_points",
+        "value": 1,
+        "description": "1 reward point per ₹100 on Utility Spend"
+      },
+      {
+        "category": "Insurance",
+        "type": "reward_points",
+        "value": 1,
+        "description": "1 reward point per ₹100 on Insurance Spend"
+      }
+    ],
+    "feesAndCharges": {
+      "annual": {
+        "value": 2000,
+        "type": "fixed",
+        "description": "+ GST (waived on spend over ₹3 lakh for the next year)"
+      },
+      "joining": {
+        "value": 3000,
+        "type": "fixed",
+        "description": "+ GST"
+      },
+      "cashWithdrawal": {
+        "value": 3.75,
+        "type": "percentage",
+        "description": "interest per month"
+      },
+      "forex": {
+        "value": 3.5,
+        "type": "percentage"
+      },
+      "fuelTransaction": {
+        "value": 1,
+        "type": "percentage",
+        "description": "surcharge (waived on transactions ₹400–₹4,000)"
+      }
+    },
+    "link": "https://www.icici.bank.in/personal-banking/cards/credit-card/rubyx-credit-card",
+    "updatedAt": "2026-03-04",
+    "dataSource": "scraped"
+  },
+  {
+    "name": "Times Black ICICI Bank Credit Card",
+    "bankName": "ICICI Bank",
+    "cardType": "premium",
+    "description": "Unparalleled Privileges for a Life of Luxury, offering exclusive lifestyle benefits, travel perks, and accelerated rewards.",
+    "benefits": [
+      {
+        "category": "International Spend",
+        "type": "reward_points",
+        "value": 2.5
+      },
+      {
+        "category": "General",
+        "type": "reward_points",
+        "value": 2,
+        "description": "On domestic spend"
+      },
+      {
+        "category": "Fuel",
+        "type": "cashback",
+        "value": 1,
+        "description": "1% fuel surcharge waiver on transactions at all fuel stations"
+      }
+    ],
+    "feesAndCharges": {
+      "annual": {
+        "value": 20000,
+        "type": "fixed",
+        "description": "Plus GST. Waived on spends over ₹25 lakh for the next year."
+      },
+      "joining": {
+        "value": 20000,
+        "type": "fixed",
+        "description": "Plus GST"
+      },
+      "cashWithdrawal": {
+        "value": 0,
+        "type": "fixed",
+        "description": "Nil ATM withdrawal fee"
+      },
+      "forex": {
+        "value": 1.49,
+        "type": "percentage"
+      },
+      "fuelTransaction": {
+        "value": 1,
+        "type": "percentage",
+        "description": "1% fuel surcharge, typically waived"
+      }
+    },
+    "link": "https://www.icici.bank.in/personal-banking/cards/credit-card/times-black-icici-credit-card",
+    "updatedAt": "2026-03-04",
+    "dataSource": "scraped"
+  },
+  {
+    "name": "Emeralde Private Metal Credit Card",
+    "bankName": "ICICI Bank",
+    "cardType": "premium",
+    "description": "Outstanding luxury rewards with unlimited lounge and golf access",
+    "benefits": [
+      {
+        "category": "General",
+        "type": "reward_points",
+        "value": 6,
+        "description": "On every ₹200 spent on retail"
+      },
+      {
+        "category": "Grocery",
+        "type": "reward_points",
+        "value": 6,
+        "description": "On every ₹200 spent, max 1,000 Reward Points per category per statement cycle"
+      },
+      {
+        "category": "Utilities",
+        "type": "reward_points",
+        "value": 6,
+        "description": "On every ₹200 spent, max 1,000 Reward Points per category per statement cycle"
+      },
+      {
+        "category": "Education",
+        "type": "reward_points",
+        "value": 6,
+        "description": "On every ₹200 spent, max 1,000 Reward Points per category per statement cycle"
+      },
+      {
+        "category": "Insurance",
+        "type": "reward_points",
+        "value": 6,
+        "description": "On every ₹200 spent, max 5,000 Reward Points per category per statement cycle"
+      },
+      {
+        "category": "Fuel",
+        "type": "cashback",
+        "value": 1,
+        "description": "1% fuel surcharge waiver at all fuel stations"
+      }
+    ],
+    "feesAndCharges": {
+      "annual": {
+        "value": 12499,
+        "type": "fixed",
+        "description": "GST extra; waived on spends over ₹10 lakh for next year"
+      },
+      "joining": {
+        "value": 12499,
+        "type": "fixed",
+        "description": "GST extra"
+      },
+      "cashWithdrawal": {
+        "value": 3.75,
+        "type": "percentage",
+        "description": "interest per month"
+      },
+      "forex": {
+        "value": 2,
+        "type": "percentage"
+      },
+      "fuelTransaction": {
+        "value": 1,
+        "type": "percentage",
+        "description": "1% surcharge (waived for cardholder)"
+      }
+    },
+    "link": "https://www.icici.bank.in/personal-banking/cards/credit-card/emeralde-private-metal-credit-card",
+    "updatedAt": "2026-03-04",
+    "dataSource": "scraped"
+  },
+  {
+    "name": "Emeralde Credit Card",
+    "bankName": "ICICI Bank",
+    "cardType": "premium",
+    "description": "A premium credit card offering luxurious lifestyle benefits including unlimited airport lounge access, golf sessions, movie offers, and travel cancellation waivers.",
+    "benefits": [
+      {
+        "category": "General",
+        "type": "reward_points",
+        "value": 4,
+        "description": "4 reward points per ₹100 on domestic spend"
+      },
+      {
+        "category": "Travel",
+        "type": "reward_points",
+        "value": 4,
+        "description": "4 reward points per ₹100 on international spend"
+      },
+      {
+        "category": "Utilities",
+        "type": "reward_points",
+        "value": 1,
+        "description": "1 reward point per ₹100 on utility and insurance spend"
+      },
+      {
+        "category": "Travel",
+        "type": "other",
+        "value": 0,
+        "description": "Unlimited international and domestic airport lounge access for primary cardholder"
+      },
+      {
+        "category": "Entertainment",
+        "type": "other",
+        "value": 0,
+        "description": "Up to 4 complimentary golf rounds per month based on eligible spends"
+      },
+      {
+        "category": "Entertainment",
+        "type": "cashback",
+        "value": 0,
+        "description": "Buy One Get One Free on BookMyShow tickets, up to ₹750, four times a month"
+      },
+      {
+        "category": "Shopping",
+        "type": "cashback",
+        "value": 0,
+        "description": "Birthday shopping voucher from TATA CLiQ worth ₹5,000 (for American Express Cardholders)"
+      },
+      {
+        "category": "Travel",
+        "type": "other",
+        "value": 0,
+        "description": "No cancellation charges on domestic flight and hotel bookings, up to ₹12,000 (twice yearly)"
+      },
+      {
+        "category": "Fuel",
+        "type": "cashback",
+        "value": 1,
+        "description": "1% fuel surcharge waiver on all fuel stations"
+      },
+      {
+        "category": "General",
+        "type": "other",
+        "value": 0,
+        "description": "24x7 Concierge Service"
+      },
+      {
+        "category": "Insurance",
+        "type": "other",
+        "value": 0,
+        "description": "Air Accident Insurance cover up to ₹3 crore"
+      }
+    ],
+    "feesAndCharges": {
+      "annual": {
+        "value": 12000,
+        "type": "fixed",
+        "description": "plus GST (waived on spends over ₹10 lakh)"
+      },
+      "joining": {
+        "value": 12000,
+        "type": "fixed",
+        "description": "plus GST"
+      },
+      "cashWithdrawal": {
+        "value": 3.75,
+        "type": "percentage",
+        "description": "interest per month"
+      },
+      "forex": {
+        "value": 2,
+        "type": "percentage",
+        "description": "reduced mark-up fee on international transactions"
+      },
+      "fuelTransaction": {
+        "value": 1,
+        "type": "percentage",
+        "description": "surcharge (waived)"
+      }
+    },
+    "link": "https://www.icici.bank.in/personal-banking/cards/credit-card/emeralde-credit-card",
+    "updatedAt": "2026-03-04",
+    "dataSource": "scraped"
+  },
+  {
+    "name": "Adani One ICICI Bank Signature Credit Card",
+    "bankName": "ICICI Bank",
+    "cardType": "cobrand",
+    "description": "A co-branded credit card offering exclusive airport experiences, Adani One rewards, and entertainment benefits.",
+    "benefits": [
+      {
+        "category": "Travel",
+        "type": "cashback",
+        "value": 5000,
+        "description": "Flight vouchers worth ₹5,000 on spends of ₹25,000 within 60 days of card activation."
+      },
+      {
+        "category": "Travel",
+        "type": "cashback",
+        "value": 2000,
+        "description": "Exclusive Hotel vouchers worth ₹2,000."
+      },
+      {
+        "category": "Entertainment",
+        "type": "cashback",
+        "value": 500,
+        "description": "Buy one get one free (up to ₹500 off on second ticket) on BookMyShow, twice a month."
+      },
+      {
+        "category": "Fuel",
+        "type": "cashback",
+        "value": 1,
+        "description": "1% fuel surcharge waiver on all fuel transactions."
+      },
+      {
+        "category": "Adani",
+        "type": "reward_points",
+        "value": 7,
+        "description": "7 reward points per ₹100 spent on Adani One Ecosystem."
+      },
+      {
+        "category": "International",
+        "type": "reward_points",
+        "value": 2,
+        "description": "2 reward points per ₹100 spent on International transactions."
+      },
+      {
+        "category": "General",
+        "type": "reward_points",
+        "value": 1.5,
+        "description": "1.5 reward points per ₹100 spent on Domestic transactions."
+      },
+      {
+        "category": "Travel",
+        "type": "cashback",
+        "value": 0,
+        "description": "2 complimentary Pranaam services annually (1 on activation, 1 on ₹3 lakh spends)."
+      },
+      {
+        "category": "Travel",
+        "type": "cashback",
+        "value": 0,
+        "description": "16 complimentary Premium Lounge upgrades annually."
+      },
+      {
+        "category": "Travel",
+        "type": "cashback",
+        "value": 0,
+        "description": "4 complimentary valet parking services annually."
+      },
+      {
+        "category": "Travel",
+        "type": "cashback",
+        "value": 0,
+        "description": "4 complimentary premium car parking services on card activation annually."
+      },
+      {
+        "category": "Travel",
+        "type": "cashback",
+        "value": 0,
+        "description": "2 porter services for every ₹1 lakh spent, up to 8 annually."
+      },
+      {
+        "category": "Travel",
+        "type": "cashback",
+        "value": 0,
+        "description": "2 complimentary international airport lounge access annually."
+      },
+      {
+        "category": "Travel",
+        "type": "cashback",
+        "value": 0,
+        "description": "4 complimentary domestic airport lounge access quarterly."
+      }
+    ],
+    "feesAndCharges": {
+      "annual": {
+        "value": 5000,
+        "type": "fixed",
+        "description": "Waived off on spends over ₹6 lakh in the previous year."
+      },
+      "joining": {
+        "value": 5000,
+        "type": "fixed"
+      },
+      "cashWithdrawal": {
+        "value": 0,
+        "type": "fixed",
+        "description": "3.75% interest per month on ATM withdrawals (cash advances)."
+      },
+      "forex": {
+        "value": 3.5,
+        "type": "percentage"
+      },
+      "fuelTransaction": {
+        "value": 1,
+        "type": "percentage",
+        "description": "Fuel surcharge."
+      }
+    },
+    "link": "https://www.icici.bank.in/personal-banking/cards/credit-card/adani-icici-credit-card/signature-credit-card",
+    "updatedAt": "2026-03-04",
+    "dataSource": "scraped"
+  },
+  {
+    "name": "Adani One ICICI Bank Platinum Credit Card",
+    "bankName": "ICICI Bank",
+    "cardType": "cobrand",
+    "description": "Offers premium travel, stay, and airport perks with fuel and entertainment benefits, especially within the Adani One ecosystem.",
+    "benefits": [
+      {
+        "category": "Adani",
+        "type": "reward_points",
+        "value": 3,
+        "description": "Reward points per ₹100 spent on Adani One Ecosystem"
+      },
+      {
+        "category": "General",
+        "type": "reward_points",
+        "value": 1.5,
+        "description": "Reward points per ₹100 spent on International transactions"
+      },
+      {
+        "category": "General",
+        "type": "reward_points",
+        "value": 1,
+        "description": "Reward points per ₹100 spent on Domestic transactions"
+      },
+      {
+        "category": "Travel",
+        "type": "reward_points",
+        "value": 8,
+        "description": "Premium lounge upgrades annually"
+      },
+      {
+        "category": "Travel",
+        "type": "reward_points",
+        "value": 2,
+        "description": "Domestic complimentary Airport Lounge access quarterly"
+      },
+      {
+        "category": "Travel",
+        "type": "reward_points",
+        "value": 2,
+        "description": "Valet Parking annually"
+      },
+      {
+        "category": "Travel",
+        "type": "reward_points",
+        "value": 2,
+        "description": "Premium car parking quarterly on card activation"
+      },
+      {
+        "category": "Travel",
+        "type": "cashback",
+        "value": 2000,
+        "description": "Up to 4 Porter services worth ₹2000 for ₹1 lakh annual spend"
+      },
+      {
+        "category": "Travel",
+        "type": "reward_points",
+        "value": 1,
+        "description": "Flight vouchers on ₹10,000 spend within 60 days of card activation"
+      },
+      {
+        "category": "Entertainment",
+        "type": "cashback",
+        "value": 25,
+        "description": "25% off up to ₹100 on 2 movie tickets monthly via INOX/BookMyShow"
+      },
+      {
+        "category": "Fuel",
+        "type": "cashback",
+        "value": 1,
+        "description": "1% fuel surcharge waiver up to ₹4,000"
+      }
+    ],
+    "feesAndCharges": {
+      "annual": {
+        "value": 750,
+        "type": "fixed",
+        "description": "Waived on spends over ₹3 lakh (plus GST)"
+      },
+      "joining": {
+        "value": 750,
+        "type": "fixed",
+        "description": "Plus GST"
+      },
+      "cashWithdrawal": {
+        "value": 3.75,
+        "type": "percentage",
+        "description": "Interest per month"
+      },
+      "forex": {
+        "value": 3.5,
+        "type": "percentage"
+      },
+      "fuelTransaction": {
+        "value": 0,
+        "type": "fixed",
+        "description": "Actual fee not specified, 1% waiver available"
+      }
+    },
+    "link": "https://www.icici.bank.in/personal-banking/cards/credit-card/adani-icici-credit-card/platinum-card",
+    "updatedAt": "2026-03-04",
+    "dataSource": "scraped"
+  },
+  {
+    "name": "MakeMyTrip ICICI Bank Credit Card",
+    "bankName": "ICICI Bank",
+    "cardType": "cobrand",
+    "description": "Best for travel enthusiasts, offering up to 6% myCash on MakeMyTrip bookings, low 0.99% forex markup, and complimentary MMTBLACK Gold membership.",
+    "benefits": [
+      {
+        "category": "Travel",
+        "type": "reward_points",
+        "value": 6,
+        "description": "On MakeMyTrip Hotel Bookings"
+      },
+      {
+        "category": "Travel",
+        "type": "reward_points",
+        "value": 3,
+        "description": "On MakeMyTrip Flight, Bus & Cab Bookings"
+      },
+      {
+        "category": "General",
+        "type": "reward_points",
+        "value": 1,
+        "description": "On all other retail spends"
+      }
+    ],
+    "feesAndCharges": {
+      "annual": {
+        "value": 999,
+        "type": "fixed",
+        "description": "Plus GST. Waived off on spend over ₹3 lakh in one year."
+      },
+      "joining": {
+        "value": 999,
+        "type": "fixed",
+        "description": "Plus GST."
+      },
+      "cashWithdrawal": {
+        "value": 3.75,
+        "type": "percentage",
+        "description": "Interest per month"
+      },
+      "forex": {
+        "value": 0.99,
+        "type": "percentage"
+      },
+      "fuelTransaction": {
+        "value": 0,
+        "type": "fixed"
+      }
+    },
+    "link": "https://www.icici.bank.in/personal-banking/cards/credit-card/makemytrip/makemytrip-icici-credit-card",
+    "updatedAt": "2026-03-04",
+    "dataSource": "scraped"
+  },
+  {
+    "name": "Emirates Skywards ICICI Bank Emeralde Credit Card",
+    "bankName": "ICICI Bank",
+    "cardType": "cobrand",
+    "description": "High-end flying perks with Skywards miles and exclusive benefits.",
+    "benefits": [
+      {
+        "category": "General",
+        "type": "reward_points",
+        "value": 10000,
+        "description": "10,000 Skywards Miles as a joining benefit"
+      },
+      {
+        "category": "General",
+        "type": "reward_points",
+        "value": 10000,
+        "description": "10,000 Skywards Miles on annual renewal"
+      },
+      {
+        "category": "Entertainment",
+        "type": "cashback",
+        "value": 750,
+        "description": "Buy one get one free on movie tickets via BookMyShow, up to ₹750 off, four times a month"
+      },
+      {
+        "category": "Fuel",
+        "type": "cashback",
+        "value": 1,
+        "description": "1% fuel surcharge waiver on transactions up to ₹4,000"
+      },
+      {
+        "category": "General",
+        "type": "reward_points",
+        "value": 2,
+        "description": "2 Skywards miles per ₹100 on domestic spend"
+      },
+      {
+        "category": "General",
+        "type": "reward_points",
+        "value": 2,
+        "description": "2 Skywards miles per ₹100 on international spend"
+      }
+    ],
+    "feesAndCharges": {
+      "annual": {
+        "value": 10000,
+        "type": "fixed",
+        "description": "Plus Goods and Services Tax (GST)"
+      },
+      "joining": {
+        "value": 10000,
+        "type": "fixed",
+        "description": "Plus Goods and Services Tax (GST)"
+      },
+      "cashWithdrawal": {
+        "value": 3.75,
+        "type": "percentage",
+        "description": "Interest per month"
+      },
+      "forex": {
+        "value": 0,
+        "type": "percentage",
+        "description": "Not specified, defaulting to 0"
+      },
+      "fuelTransaction": {
+        "value": 1,
+        "type": "percentage",
+        "description": "Surcharge, typically waived up to a limit"
+      }
+    },
+    "link": "https://www.icici.bank.in/personal-banking/cards/credit-card/emirates-skywards/emirates-emeralde",
+    "updatedAt": "2026-03-04",
+    "dataSource": "scraped"
+  },
+  {
+    "name": "HPCL Coral Credit Card",
+    "bankName": "ICICI Bank",
+    "cardType": "cobrand",
+    "description": "A co-branded credit card offering fuel savings, reward points, and movie ticket discounts, primarily beneficial for HPCL users.",
+    "benefits": [
+      {
+        "category": "Fuel",
+        "type": "cashback",
+        "value": 3.5,
+        "description": "Up to 3.5% savings on fuel transactions at HPCL petrol pumps"
+      },
+      {
+        "category": "Fuel",
+        "type": "cashback",
+        "value": 1,
+        "description": "1% fuel surcharge waiver on transactions between ₹400-₹4,000 at HPCL pumps"
+      },
+      {
+        "category": "Entertainment",
+        "type": "cashback",
+        "value": 25,
+        "description": "25% off up to ₹100 on 2 movie tickets monthly via BookMyShow"
+      },
+      {
+        "category": "General",
+        "type": "reward_points",
+        "value": 2,
+        "description": "2 reward points on every ₹100 retail spend"
+      },
+      {
+        "category": "Utilities",
+        "type": "reward_points",
+        "value": 1,
+        "description": "1 reward point on every ₹100 utility spend"
+      },
+      {
+        "category": "Insurance",
+        "type": "reward_points",
+        "value": 1,
+        "description": "1 reward point on every ₹100 insurance spend"
+      }
+    ],
+    "feesAndCharges": {
+      "annual": {
+        "value": 199,
+        "type": "fixed",
+        "description": "Waived off on spending ₹50,000 in the previous year"
+      },
+      "joining": {
+        "value": 199,
+        "type": "fixed"
+      },
+      "cashWithdrawal": {
+        "value": 0,
+        "type": "fixed",
+        "description": "Interest of 3.75% per month applies"
+      },
+      "forex": {
+        "value": 3.5,
+        "type": "percentage"
+      },
+      "fuelTransaction": {
+        "value": 0,
+        "type": "fixed",
+        "description": "1% surcharge waived on transactions between ₹400-₹4,000 at HPCL pumps"
+      }
+    },
+    "link": "https://www.icici.bank.in/personal-banking/cards/credit-card/hpcl-coral-credit-card",
+    "updatedAt": "2026-03-04",
+    "dataSource": "scraped"
+  },
+  {
+    "name": "ICICI Bank Manchester United Platinum Credit Card",
+    "bankName": "ICICI Bank",
+    "cardType": "cobrand",
+    "description": "A co-branded card offering exclusive Manchester United benefits and rewards for football enthusiasts.",
+    "benefits": [
+      {
+        "category": "General",
+        "type": "reward_points",
+        "value": 2,
+        "description": "2 points per ₹100 on domestic spend"
+      },
+      {
+        "category": "Travel",
+        "type": "reward_points",
+        "value": 2,
+        "description": "2 points per ₹100 on international spend"
+      },
+      {
+        "category": "Entertainment",
+        "type": "reward_points",
+        "value": 3,
+        "description": "3 points per ₹100 on Match Day spend"
+      },
+      {
+        "category": "Shopping",
+        "type": "cashback",
+        "value": 10,
+        "description": "10% off on merchandise at the Manchester United online store"
+      },
+      {
+        "category": "Fuel",
+        "type": "cashback",
+        "value": 1,
+        "description": "1% waiver on fuel transactions worth ₹400-₹4,000 at HPCL pumps"
+      },
+      {
+        "category": "Entertainment",
+        "type": "cashback",
+        "value": 25,
+        "description": "25% off up to ₹100 on movie tickets, twice a month at BookMyShow and INOX"
+      }
+    ],
+    "feesAndCharges": {
+      "annual": {
+        "value": 499,
+        "type": "fixed",
+        "description": "Waived on spending over ₹1,25,000 in a year"
+      },
+      "joining": {
+        "value": 499,
+        "type": "fixed"
+      },
+      "cashWithdrawal": {
+        "value": 0,
+        "type": "fixed"
+      },
+      "forex": {
+        "value": 0,
+        "type": "fixed"
+      },
+      "fuelTransaction": {
+        "value": 1,
+        "type": "percentage",
+        "description": "1% surcharge is waived on transactions between ₹400-₹4,000 at HPCL pumps"
+      }
+    },
+    "link": "https://www.icici.bank.in/personal-banking/cards/credit-card/manchester-platinum-card",
+    "updatedAt": "2026-03-04",
+    "dataSource": "scraped"
+  }
 ]

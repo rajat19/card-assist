@@ -126,7 +126,7 @@ REQUIRED JSON structure:
   "benefits": [
     {
       "category": "Category (e.g. Shopping, Dining, Amazon, Swiggy, Travel, Fuel, Groceries, Online Shopping, Entertainment, Utilities, General)",
-      "type": "cashback" | "reward_points",
+      "type": "cashback" | "reward_points" | "miles" | "discount" | "waiver" | "rebate" | "reimbursement" | "voucher" | "fixed",
       "value": <number: percentage value or multiplier>,
       "description": "Optional detail about the benefit"
     }

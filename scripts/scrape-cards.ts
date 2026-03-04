@@ -142,9 +142,9 @@ REQUIRED FIELDS (return exactly this JSON structure):
   "description": "One-line description",
   "benefits": [
     {
-      "category": "Category name (e.g. Shopping, Dining, Amazon, Swiggy)",
-      "type": "cashback" | "reward_points",
-      "value": <number: percentage value>,
+      "category": "Category name (e.g. Shopping, Dining, Amazon, Swiggy, Travel, Fuel, Groceries, Online Shopping, Entertainment, Utilities, General)",
+      "type": "cashback" | "reward_points" | "miles" | "discount" | "waiver" | "rebate" | "reimbursement" | "voucher" | "fixed",
+      "value": <number: percentage value or multiplier>,
       "description": "Optional detail"
     }
   ],

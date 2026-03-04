@@ -12,8 +12,8 @@ const AllCards = () => {
     const [filters, setFilters] = useState<CardFilters>({
         banks: [],
         cardTypes: [],
-        joiningFeeRange: [0, 10000],
-        annualFeeRange: [0, 12500],
+        joiningFeeRange: [0, 100000],
+        annualFeeRange: [0, 100000],
     });
 
     const filteredCards = useMemo(() => {
