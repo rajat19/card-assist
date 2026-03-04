@@ -1,8 +1,9 @@
 import { Benefit, BenefitType, CardType, CreditCard } from '@/types/creditcard';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { CreditCard as CardIcon, Banknote, Award, ExternalLink, Sparkles, Trophy } from 'lucide-react';
+import { CreditCard as CardIcon, ExternalLink, Sparkles, Trophy } from 'lucide-react';
 import { getBankIcon, getBankColor } from '@/data/bankIcons';
+import BenefitPill from '@/components/BenefitPill';
 
 interface CreditCardItemProps {
   card: CreditCard;
@@ -136,20 +137,11 @@ const CreditCardItem = ({ card, rank, aiReason }: CreditCardItemProps) => {
             <h4 className="text-sm font-medium text-card-foreground shrink-0">Key Benefits</h4>
             <div className="flex flex-wrap gap-1.5 overflow-y-auto max-h-24">
               {card.benefits.map((benefit, index) => (
-                <div
+                <BenefitPill
                   key={index}
-                  className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-background/60 border border-border/50"
-                >
-                  {benefit.type === BenefitType.CASHBACK ? (
-                    <Banknote className="h-3 w-3 text-financial-green" />
-                  ) : (
-                    <Award className="h-3 w-3 text-financial-blue" />
-                  )}
-                  <span className="text-card-foreground">{benefit.category}</span>
-                  <span className="font-bold" style={{ color: bankColor.accent }}>
-                    {benefit.value}%{benefit.type === BenefitType.REWARD_POINTS ? ' RP' : ''}
-                  </span>
-                </div>
+                  benefit={benefit}
+                  accentColor={bankColor.accent}
+                />
               ))}
             </div>
           </div>
