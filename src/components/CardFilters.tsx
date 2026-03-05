@@ -1,10 +1,11 @@
-import { useState } from 'react';
-import { Bank, CardType } from '@/types/creditcard';
+import { useState, useMemo } from 'react';
+import { Bank, CardType, CreditCard } from '@/types/creditcard';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Label } from '@/components/ui/label';
 import { Slider } from '@/components/ui/slider';
 import { Button } from '@/components/ui/button';
 import { getBankIcon } from '@/data/bankIcons';
+import { getCategoryIcon } from '@/lib/benefitUtils';
 import { Filter, X, ChevronDown, ChevronUp } from 'lucide-react';
 
 export interface CardFilters {
@@ -12,6 +13,7 @@ export interface CardFilters {
     cardTypes: CardType[];
     joiningFeeRange: [number, number];
     annualFeeRange: [number, number];
+    benefitCategories: string[];
 }
 
 const BANKS = [
@@ -41,19 +43,41 @@ interface CardFiltersProps {
     onFiltersChange: (filters: CardFilters) => void;
     totalCards: number;
     filteredCount: number;
+    allCards: CreditCard[];
 }
 
-const CardFiltersPanel = ({ filters, onFiltersChange, totalCards, filteredCount }: CardFiltersProps) => {
+const CardFiltersPanel = ({ filters, onFiltersChange, totalCards, filteredCount, allCards }: CardFiltersProps) => {
     const [expandedSections, setExpandedSections] = useState({
         bank: true,
         cardType: true,
         joiningFee: true,
         annualFee: true,
+        benefitCategory: true,
     });
+
+    // Compute top 10 benefit categories by frequency across all cards
+    const topBenefitCategories = useMemo(() => {
+        const countMap = new Map<string, number>();
+        allCards.forEach(card => {
+            const cardBenefits = new Set<string>();
+            card.benefits.forEach(b => {
+                const cat = b.category;
+                if (!cardBenefits.has(cat)) {
+                    countMap.set(cat, (countMap.get(cat) ?? 0) + 1);
+                    cardBenefits.add(cat);
+                }
+            });
+        });
+        return [...countMap.entries()]
+            .sort((a, b) => b[1] - a[1])
+            .slice(0, 10)
+            .map(([cat, count]) => ({ category: cat, count }));
+    }, [allCards]);
 
     const activeFilterCount =
         filters.banks.length +
         filters.cardTypes.length +
+        filters.benefitCategories.length +
         (filters.joiningFeeRange[0] > 0 || filters.joiningFeeRange[1] < MAX_JOINING_FEE ? 1 : 0) +
         (filters.annualFeeRange[0] > 0 || filters.annualFeeRange[1] < MAX_ANNUAL_FEE ? 1 : 0);
 
@@ -75,12 +99,20 @@ const CardFiltersPanel = ({ filters, onFiltersChange, totalCards, filteredCount 
         onFiltersChange({ ...filters, cardTypes });
     };
 
+    const toggleBenefitCategory = (category: string) => {
+        const benefitCategories = filters.benefitCategories.includes(category)
+            ? filters.benefitCategories.filter(c => c !== category)
+            : [...filters.benefitCategories, category];
+        onFiltersChange({ ...filters, benefitCategories });
+    };
+
     const clearAll = () => {
         onFiltersChange({
             banks: [],
             cardTypes: [],
             joiningFeeRange: [0, MAX_JOINING_FEE],
             annualFeeRange: [0, MAX_ANNUAL_FEE],
+            benefitCategories: [],
         });
     };
 
@@ -141,6 +173,36 @@ const CardFiltersPanel = ({ filters, onFiltersChange, totalCards, filteredCount 
                                 </div>
                             );
                         })}
+                    </div>
+                )}
+            </div>
+
+
+            {/* Benefits On Filter */}
+            <div>
+                <button
+                    onClick={() => toggleSection('benefitCategory')}
+                    className="flex items-center justify-between w-full text-sm font-medium text-foreground mb-2"
+                >
+                    Benefits On
+                    {expandedSections.benefitCategory ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
+                </button>
+                {expandedSections.benefitCategory && (
+                    <div className="space-y-1.5 ml-1">
+                        {topBenefitCategories.map(({ category, count }) => (
+                            <div key={category} className="flex items-center gap-2">
+                                <Checkbox
+                                    id={`benefit-${category}`}
+                                    checked={filters.benefitCategories.includes(category)}
+                                    onCheckedChange={() => toggleBenefitCategory(category)}
+                                />
+                                <Label htmlFor={`benefit-${category}`} className="flex items-center gap-2 text-sm cursor-pointer font-normal flex-1">
+                                    {getCategoryIcon(category)}
+                                    <span>{category}</span>
+                                    <span className="text-[10px] text-muted-foreground ml-auto">({count})</span>
+                                </Label>
+                            </div>
+                        ))}
                     </div>
                 )}
             </div>

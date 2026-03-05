@@ -9,7 +9,7 @@ import {
 import { Badge } from '@/components/ui/badge';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { getBankIcon, getBankColor } from '@/data/bankIcons';
-import BenefitPill from '@/components/BenefitPill';
+import BenefitDetailed from '@/components/BenefitDetailed';
 import PerkItem from '@/components/PerkItem';
 import { ExternalLink, CreditCard as CardIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -106,9 +106,9 @@ export function CardDetailsSheet({ card, open, onOpenChange }: CardDetailsSheetP
                         {card.benefits && card.benefits.length > 0 && (
                             <div className="space-y-3">
                                 <h4 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">Earning Rates</h4>
-                                <div className="flex flex-wrap gap-2">
+                                <div className="space-y-2">
                                     {card.benefits.map((benefit: Benefit, i: number) => (
-                                        <BenefitPill key={i} benefit={benefit} accentColor={bankColor.accent} />
+                                        <BenefitDetailed key={i} benefit={benefit} accentColor={bankColor.accent} />
                                     ))}
                                 </div>
                             </div>

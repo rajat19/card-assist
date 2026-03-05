@@ -21,6 +21,7 @@ const Index = () => {
     cardTypes: [],
     joiningFeeRange: [0, 100000],
     annualFeeRange: [0, 100000],
+    benefitCategories: [],
   });
 
   // Base list: either AI results or all cards
@@ -35,6 +36,10 @@ const Index = () => {
       if (joiningFee < filters.joiningFeeRange[0] || joiningFee > filters.joiningFeeRange[1]) return false;
       const annualFee = card.feesAndCharges.annual.value;
       if (annualFee < filters.annualFeeRange[0] || annualFee > filters.annualFeeRange[1]) return false;
+      if (filters.benefitCategories.length > 0) {
+        const cardCategories = card.benefits.map(b => b.category);
+        if (!filters.benefitCategories.some(cat => cardCategories.includes(cat))) return false;
+      }
       return true;
     });
   }, [baseCards, filters]);
@@ -90,7 +95,7 @@ const Index = () => {
               <TrendingUp className="h-4 w-4 text-financial-blue shrink-0" />
               <div className="min-w-0">
                 <span className="text-sm font-semibold text-foreground">
-                  Best Cards for "{aiResult.displayQuery}"
+                  {aiResult.isAiPowered ? `Best Cards for "${aiResult.displayQuery}"` : `Results for "${aiResult.displayQuery}"`}
                 </span>
                 {aiResult.reasoning && (
                   <p className="text-xs text-muted-foreground mt-0.5 truncate">{aiResult.reasoning}</p>
@@ -112,7 +117,7 @@ const Index = () => {
             </h2>
             <p className="text-sm text-muted-foreground">
               {aiResult
-                ? `AI-ranked results${filters.banks.length || filters.cardTypes.length ? ', filtered' : ''}`
+                ? `${aiResult.isAiPowered ? 'AI-ranked' : 'Keyword search'} results${filters.banks.length || filters.cardTypes.length ? ', filtered' : ''}`
                 : filteredCards.length === cards.length
                   ? `Browse all ${cards.length} available credit cards`
                   : `Showing ${filteredCards.length} of ${cards.length} credit cards`
@@ -136,6 +141,7 @@ const Index = () => {
                 onFiltersChange={setFilters}
                 totalCards={baseCards.length}
                 filteredCount={filteredCards.length}
+                allCards={cards}
               />
             </SheetContent>
           </Sheet>
@@ -157,6 +163,7 @@ const Index = () => {
                 onFiltersChange={setFilters}
                 totalCards={baseCards.length}
                 filteredCount={filteredCards.length}
+                allCards={cards}
               />
             </div>
           </aside>
@@ -169,7 +176,7 @@ const Index = () => {
                   <CreditCardItem
                     key={card.name}
                     card={card}
-                    rank={aiResult ? index + 1 : undefined}
+                    rank={aiResult?.isAiPowered ? index + 1 : undefined}
                     aiReason={aiResult?.aiReasonByName[card.name]}
                   />
                 ))}
