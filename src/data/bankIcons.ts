@@ -58,4 +58,8 @@ export function getBankColor(bankName: string): BankColorStyle {
     };
 }
 
+export function getBankColorHSL(bankName: string): { h: number; s: number; l: number } {
+    return BANK_COLORS[bankName] ?? { h: 213, s: 40, l: 50 };
+}
+
 export default BANK_ICONS;

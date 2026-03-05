@@ -8,12 +8,13 @@ import {
 } from '@/components/ui/sheet';
 import { Badge } from '@/components/ui/badge';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { getBankIcon, getBankColor } from '@/data/bankIcons';
+import { getBankIcon, getBankColor, getBankColorHSL } from '@/data/bankIcons';
 import BenefitDetailed from '@/components/BenefitDetailed';
 import PerkItem from '@/components/PerkItem';
 import { ExternalLink, CreditCard as CardIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import PerkItemIcon from './PerkItemIcon';
+import CardImagePlaceholder from './CardImagePlaceholder';
 
 interface CardDetailsSheetProps {
     card: CreditCard | null;
@@ -26,39 +27,35 @@ export function CardDetailsSheet({ card, open, onOpenChange }: CardDetailsSheetP
 
     const BankIcon = getBankIcon(card.bankName);
     const bankColor = getBankColor(card.bankName);
+    const hsl = getBankColorHSL(card.bankName);
 
     return (
         <Sheet open={open} onOpenChange={onOpenChange}>
             <SheetContent side="right" className="w-full sm:w-[450px] sm:max-w-[450px] p-0 flex flex-col h-full overflow-hidden">
-                {/* Header Section */}
+                {/* Header Section with Card Image */}
                 <div
-                    className="px-6 py-6 border-b shrink-0 bg-gradient-to-br from-background to-muted/30"
-                    style={{ borderTop: `4px solid ${bankColor.accent}` }}
+                    className="shrink-0 border-b overflow-hidden"
+                    style={{
+                        background: `linear-gradient(180deg, hsla(${hsl.h}, ${hsl.s}%, ${hsl.l}%, 0.08) 0%, transparent 100%)`,
+                    }}
                 >
-                    <SheetHeader className="text-left space-y-4">
-                        <div className="flex items-start justify-between">
-                            <div
-                                className="w-12 h-12 rounded-xl flex items-center justify-center shadow-sm border border-border/50"
-                                style={{ backgroundColor: bankColor.bg }}
-                            >
-                                {BankIcon ? (
-                                    <img src={BankIcon} alt={card.bankName} className="w-8 h-8 object-contain" />
-                                ) : (
-                                    <CardIcon className="w-6 h-6" style={{ color: bankColor.accent }} />
-                                )}
+                    {/* Card Image */}
+                    <CardImagePlaceholder card={card} />
+
+                    {/* Card Info */}
+                    <SheetHeader className="text-left px-6 pb-5 space-y-2">
+                        <div className="flex items-start justify-between gap-3">
+                            <div className="min-w-0">
+                                <SheetTitle className="text-xl leading-tight mb-1" style={{ color: bankColor.accent }}>
+                                    {card.name}
+                                </SheetTitle>
+                                <SheetDescription className="text-sm">
+                                    {card.bankName}
+                                </SheetDescription>
                             </div>
-                            <Badge variant="secondary" className="capitalize shrink-0">
+                            <Badge variant="secondary" className="capitalize shrink-0 mt-1">
                                 {card.cardType}
                             </Badge>
-                        </div>
-
-                        <div>
-                            <SheetTitle className="text-xl leading-tight mb-1" style={{ color: bankColor.accent }}>
-                                {card.name}
-                            </SheetTitle>
-                            <SheetDescription className="text-sm">
-                                {card.bankName}
-                            </SheetDescription>
                         </div>
                     </SheetHeader>
                 </div>
